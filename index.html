@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base Digital Global Consultancy Limited</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ========================================================
+           PASTE EVERYTHING FROM THE CSS FILE HERE
+           ======================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #0b0d17;
+            background-image: radial-gradient(white 1%, transparent 1%), radial-gradient(white 1%, transparent 1%);
+            background-size: 60px 60px;
+            background-position: 0 0, 30px 30px;
+            color: #ffffff;
+            line-height: 1.6;
+            padding-bottom: 80px;
+        }
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        h1, h2, h3 { text-align: center; letter-spacing: 1px; }
+        .hero { text-align: center; padding: 60px 20px; }
+        .company-title { color: #c5a880; font-size: 1.8rem; margin-bottom: 30px; }
+        .hero-subtext { font-size: 2rem; font-weight: bold; max-width: 800px; margin: 0 auto 40px auto; }
+        
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #5c3a1a;
+            color: #ffffff;
+            padding: 18px 40px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            letter-spacing: 2px;
+            transition: transform 0.2s, background-color 0.2s;
+            border: 2px solid #7c522b;
+        }
+        .btn-cta i { margin-left: 15px; }
+        .btn-cta:hover { transform: scale(1.05); background-color: #7c522b; }
+        .center-btn { text-align: center; margin: 40px 0; }
+        
+        .flyer-card {
+            background: #ffffff;
+            color: #333333;
+            border-radius: 12px;
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        @media (max-width: 768px) { .flyer-card { grid-template-columns: 1fr; } }
+        .highlight-green { background-color: #27ae60; color: white; padding: 2px 6px; display: inline-block; }
+        .tagline { background-color: #f1c40f; padding: 5px; font-weight: bold; display: inline-block; margin: 15px 0; }
+        .benefits-list { list-style: none; margin: 20px 0; }
+        .benefits-list li { margin-bottom: 10px; font-weight: 500; }
+        .benefits-list li i { color: #27ae60; margin-right: 10px; }
+        .expert-cta h3 { text-align: left; font-size: 1.1rem; color: #111; margin-top: 5px; }
+        .register-today { background-color: #27ae60; color: white; display: inline-block; padding: 4px 10px; font-weight: bold; }
+        
+        .expert-profile { text-align: center; background-color: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #ddd; }
+        .profile-img-placeholder img { width: 100%; max-width: 200px; border-radius: 6px; margin-bottom: 15px; }
+        
+        .testimonials-section { background-color: #161233; padding: 40px 0; }
+        .section-title { color: white; margin-bottom: 40px; font-size: 2rem; }
+        .testimonials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        @media (max-width: 768px) { .testimonials-grid { grid-template-columns: 1fr; } }
+        .testimonial-card { background-color: #27224d; padding: 30px; border-radius: 20px; position: relative; text-align: center; }
+        .client-avatar img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid #c5a880; }
+        .testimonial-card blockquote { font-style: italic; font-size: 0.95rem; margin-bottom: 15px; }
+        .testimonial-card h5 { color: #c5a880; font-size: 1rem; letter-spacing: 1px; }
+        
+        .facts-section h3 { color: #f1c40f; margin-bottom: 25px; }
+        .facts-list { max-width: 700px; margin: 0 auto; padding-left: 20px; }
+        .facts-list li { margin-bottom: 15px; font-weight: bold; color: #e0e0e0; font-size: 0.95rem; }
+        
+        .proof-title { margin-bottom: 30px; }
+        .proof-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        @media (max-width: 768px) { .proof-grid { grid-template-columns: 1fr; } }
+        .proof-img { width: 100%; border-radius: 8px; border: 2px solid #333; }
+        
+        footer { text-align: center; padding: 40px 20px; color: #666; font-size: 0.9rem; }
+        .carrd-tag { color: #444; margin-top: 10px; }
+        
+        .floating-call-btn { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 1000; text-decoration: none; }
+        .hexagon { width: 70px; height: 70px; border: 2px solid #e74c3c; display: flex; align-items: center; justify-content: center; border-radius: 15px; transform: rotate(45deg); box-shadow: 0 0 15px rgba(231, 76, 60, 0.4); background-color: rgba(11, 13, 23, 0.9); }
+        .hexagon i { transform: rotate(-45deg); color: #2ecc71; font-size: 1.8rem; }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <h1 class="company-title">BASE DIGITAL GLOBAL CONSULTANCY LIMITED</h1>
+            <p class="hero-subtext">I CAN HELP YOU REGISTER YOUR BUSINESS WITHIN 3 TO 7 WORKING DAYS.</p>
+            
+            <a href="https://wa.me/2348026281150?text=Hello%20Kolade%2C%0AI%20would%20like%20to%20know%20more%20about%20registering%20my%20business%20with%20the%20Corporate%20Affairs%20Commission%20(CAC).%0ASave%20my%20number%20as%20......" class="btn-cta" target="_blank">
+                START REGISTRATION <i class="fas fa-check"></i>
+            </a>
+        </div>
+    </header>
+
+    <section class="flyer-section container">
+        <div class="flyer-card">
+            <div class="flyer-content">
+                <span class="brand-tag">BASE DIGITAL</span>
+                <h2>HOW long <br><span class="highlight-green">can you stay</span> <br>in an unregistered <span class="highlight-green">busiNESS?</span></h2>
+                <p class="tagline">Build your business by Registering them</p>
+                <ul class="benefits-list">
+                    <li><i class="fas fa-certificate"></i> Incorporation Certificates</li>
+                    <li><i class="fas fa-shield-alt"></i> Exclusive Rights to own a Business Name</li>
+                    <li><i class="fas fa-hand-holding-usd"></i> Business Grant and loans</li>
+                    <li><i class="fas fa-gavel"></i> Business recognition by the government</li>
+                    <li><i class="fas fa-users"></i> Reputation with customers</li>
+                </ul>
+                <div class="expert-cta">
+                    <p class="register-today">Register Your Business Today With Us</p>
+                    <h3>BASE DIGITAL GLOBAL CONSULTANCY LIMITED</h3>
+                    <p class="contact-info">For registration and Enquires: <br><strong>+234 (0) 8026281150</strong></p>
+                </div>
+            </div>
+            <div class="expert-profile">
+                <div class="profile-img-placeholder">
+                    <img src="kolade.jpg" alt="Kolade Hezekiah Opatola">
+                </div>
+                <h4>KOLADE HEZEKIAH OPATOLA</h4>
+                <p>CAC Registration Expert</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Customer Testimonials</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="client-avatar">
+                        <img src="client1.jpg" alt="Kendanies Store">
+                    </div>
+                    <blockquote>"Thank you base digital for exceeding my expectations. The follow up, the feedback and responses were excellent. You guys really helped me and cleared all my doubts. Now I have my small business registered and I'm on my way to open my business bank account. I'll def recommend you to my friends. Thank you 😊"</blockquote>
+                    <h5>KENDANIES STORE</h5>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="client-avatar">
+                        <img src="client2.jpg" alt="Tee Exquisite Beauty">
+                    </div>
+                    <blockquote>"Thank you Base Digital for the great service, communication was efficient and the process was so comfortable and fast!"</blockquote>
+                    <h5>TEE EXQUISITE BEAUTY AND FASHION STUDIO</h5>
+                </div>
+            </div>
+
+            <div class="center-btn">
+                <a href="https://wa.me/2348026281150?text=Hello%20Kolade%2C%0AI%20would%20like%20to%20know%20more%20about%20registering%20my%20business%20with%20the%20Corporate%20Affairs%20Commission%20(CAC).%0ASave%20my%20number%20as%20......" class="btn-cta" target="_blank">
+                    START REGISTRATION <i class="fas fa-arrow-down"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="facts-section container">
+        <h3>7 FACTS ABOUT ME IN RELATION TO CAC</h3>
+        <ol class="facts-list">
+            <li>I AM ONE OF THE BEST CAC REGISTRATION EXPERTS YOU WILL EVER KNOW.</li>
+            <li>I ALWAYS DELIVER CERTIFICATES ON TIME.</li>
+            <li>I'VE NEVER HAD A QUERY I COULDN'T RESOLVE.</li>
+            <li>I ALWAYS GIVE ORIGINAL CERTIFICATES.</li>
+            <li>I'VE NEVER ABANDONED MY REGISTRATIONS HALFWAY, UNLESS MY CLIENTS IS NO LONGER INTERESTED IN USING THAT NAME.</li>
+            <li>MY PRICES ARE ALWAYS VERY FAIR.</li>
+            <li>AND YES, I AM A COACH, TRAINING OTHER PEOPLE TO CARRY ON WITH THIS JOB.</li>
+        </ol>
+    </section>
+
+    <section class="proof-section container">
+        <h3 class="proof-title">Approved Registrations Proof</h3>
+        <div class="proof-grid">
+            <img src="dashboard-proof.jpg" alt="CAC Approved Dashboard" class="proof-img">
+            <img src="certificate-proof.jpg" alt="TIN Tax Certificate" class="proof-img">
+        </div>
+        
+        <div class="center-btn">
+            <a href="https://wa.me/2348026281150?text=Hello%20Kolade%2C%0AI%20would%20like%20to%20know%20more%20about%20registering%20my%20business%20with%20the%20Corporate%20Affairs%20Commission%20(CAC).%0ASave%20my%20number%20as%20......" class="btn-cta" target="_blank">
+                START REGISTRATION <i class="fas fa-arrow-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 BASE DIGITAL GLOBAL CONSULTANCY LIMITED. ALL RIGHTS RESERVED.</p>
+        <p class="carrd-tag">( MADE WITH HTML & CSS )</p>
+    </footer>
+
+    <a href="tel:+2348026281150" class="floating-call-btn">
+        <div class="hexagon">
+            <i class="fas fa-phone-alt"></i>
+        </div>
+    </a>
+
+</body>
+</html>

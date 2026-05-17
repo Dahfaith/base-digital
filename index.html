@@ -432,7 +432,82 @@
             font-size: 0.9rem;
         }
 
-        /* Proof Section */
+        /* FAQ Section Styling */
+        .faq-section {
+            margin-top: 40px;
+        }
+
+        .faq-container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--purple-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: border-color 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            padding: 22px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #ffffff;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--gold-accent);
+        }
+
+        .faq-question i {
+            color: var(--gold-accent);
+            font-size: 1rem;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-left: 15px;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background-color: rgba(7, 9, 19, 0.4);
+        }
+
+        .faq-answer p {
+            padding: 0 30px 25px 30px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* JavaScript Toggle Active Class Targets */
+        .faq-item.active .faq-question {
+            color: var(--gold-accent);
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* Proof Section Layout */
         .proof-title {
             font-size: 1.8rem;
             font-weight: 800;
@@ -464,7 +539,7 @@
             display: block;
         }
 
-        /* Responsive Breakpoints */
+        /* Responsive Mobile Breakpoints */
         @media (max-width: 850px) {
             .flyer-card, .testimonials-grid, .proof-grid {
                 grid-template-columns: 1fr;
@@ -482,6 +557,13 @@
             }
             .facts-section {
                 padding: 30px 20px;
+            }
+            .faq-question {
+                padding: 18px 20px;
+                font-size: 0.95rem;
+            }
+            .faq-answer p {
+                padding: 0 20px 20px 20px;
             }
         }
     </style>
@@ -582,6 +664,54 @@
         </div>
     </section>
 
+    <section class="container">
+        <div class="faq-section">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is the difference between a Business Name and a Limited Liability Company (LTD)?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>A Business Name is ideal for sole proprietors or small trades where the business owner and the business are seen as the same legal entity. A Limited Liability Company (LTD) treats the company as a completely separate legal entity, meaning your personal properties are fully protected if the business faces liabilities or debts.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What documents do I need to provide for registration?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>For a basic registration, you will only need to provide two proposed business names, your valid means of government identification (e.g., NIN, Voter's Card, International Passport, or Driver's License), your passport photograph, signature scan, and basic business details.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Will I get a Tax Identification Number (TIN) automatically?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! Under current regulations, once your Limited Liability Company (LTD) registration is fully approved by the Corporate Affairs Commission (CAC), your corporate Tax Identification Number (TIN) is generated automatically and printed right on your certificate.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What happens if my proposed business names are rejected?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>If the CAC rejects your initial choices because the names are too similar to an existing brand or contain prohibited words, don't worry! We will work closely with you to submit fresh alternatives immediately at no extra name-search cost to you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="proof-section container">
         <h3 class="section-title proof-title">Approved Registrations Proof</h3>
         <div class="proof-grid">
@@ -592,10 +722,10 @@
                 <img src="certificate-proof.jpg" alt="TIN Tax Certificate" class="proof-img">
             </div>
             <div class="proof-wrapper">
-                <img src="proof3.jpg" alt="CAC Certificate Proof" class="proof-img">
+                <img src="proof3.jpeg" alt="CAC Certificate Proof" class="proof-img">
             </div>
             <div class="proof-wrapper">
-                <img src="proof4.jpg" alt="Business Registration Proof" class="proof-img">
+                <img src="proof4.jpeg" alt="Business Registration Proof" class="proof-img">
             </div>
         </div>
         
@@ -612,7 +742,7 @@
             Designed with <i class="fas fa-heart" style="color: #e74c3c; margin: 0 3px;"></i> by 
             <a href="https://visioreach.co" target="_blank" style="color: var(--gold-accent); text-decoration: none; font-weight: 700; transition: color 0.3s;">VisioReach Concepts</a>
         </p>
-        
+        <p class="carrd-tag" style="color: rgba(255,255,255,0.15); margin-top: 12px; font-weight: 600; letter-spacing: 1px;">( MADE WITH HTML & CSS )</p>
     </footer>
 
     <a href="tel:+2348026281150" class="floating-call-btn" style="position: fixed; bottom: 30px; right: 30px; z-index: 1000; text-decoration: none;">
@@ -620,6 +750,33 @@
             <i class="fas fa-phone-alt" style="transform: rotate(-45deg); color: var(--green-accent); font-size: 1.6rem;"></i>
         </div>
     </a>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const faqAnswer = button.nextElementSibling;
+
+                // Toggle Active Class for target container item
+                faqItem.classList.toggle('active');
+
+                // Dynamic height calculations for smooth fluid rendering transitions
+                if (faqItem.classList.contains('active')) {
+                    faqAnswer.style.maxHeight = faqAnswer.scrollHeight + "px";
+                } else {
+                    faqAnswer.style.maxHeight = "0px";
+                }
+
+                // Autoclose competing active toggles to save layout space
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== faqItem && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-answer').style.maxHeight = "0px";
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>

@@ -48,7 +48,7 @@
             width: 90%;
             max-width: 1100px;
             margin: 0 auto;
-            padding: 60px 0;
+            padding: 40px 0;
         }
 
         /* Typography Hierarchy */
@@ -296,7 +296,7 @@
         }
 
         .section-title {
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             font-size: 2.2rem;
             font-weight: 800;
             position: relative;
@@ -383,7 +383,6 @@
             border: 1px solid rgba(255,255,255,0.05);
             border-radius: 24px;
             padding: 50px;
-            margin-top: 40px;
             backdrop-filter: blur(5px);
         }
 
@@ -430,81 +429,6 @@
             justify-content: center;
             font-weight: 800;
             font-size: 0.9rem;
-        }
-
-        /* FAQ Section Styling */
-        .faq-section {
-            margin-top: 40px;
-        }
-
-        .faq-container {
-            max-width: 850px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background-color: var(--purple-card);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            margin-bottom: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: border-color 0.3s ease;
-        }
-
-        .faq-item:hover {
-            border-color: rgba(212, 175, 55, 0.3);
-        }
-
-        .faq-question {
-            width: 100%;
-            background: transparent;
-            border: none;
-            outline: none;
-            padding: 22px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #ffffff;
-            font-size: 1.05rem;
-            font-weight: 600;
-            text-align: left;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-
-        .faq-question:hover {
-            color: var(--gold-accent);
-        }
-
-        .faq-question i {
-            color: var(--gold-accent);
-            font-size: 1rem;
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            margin-left: 15px;
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            background-color: rgba(7, 9, 19, 0.4);
-        }
-
-        .faq-answer p {
-            padding: 0 30px 25px 30px;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* JavaScript Toggle Active Class Targets */
-        .faq-item.active .faq-question {
-            color: var(--gold-accent);
-        }
-
-        .faq-item.active .faq-question i {
-            transform: rotate(180deg);
         }
 
         /* Proof Section Layout */
@@ -558,13 +482,6 @@
             .facts-section {
                 padding: 30px 20px;
             }
-            .faq-question {
-                padding: 18px 20px;
-                font-size: 0.95rem;
-            }
-            .faq-answer p {
-                padding: 0 20px 20px 20px;
-            }
         }
     </style>
 </head>
@@ -578,8 +495,8 @@
         <div class="container">
             <p class="hero-subtext">I CAN HELP YOU REGISTER YOUR BUSINESS WITHIN 3 TO 7 WORKING DAYS.</p>
             
-            <a href="https://wa.me/2348026281150?text=Hello%20Kolade%2C%0AI%20would%20like%20to%20know%20more%20about%20registering%20my%20business%20with%20the%20Corporate%20Affairs%20Commission%20(CAC).%0ASave%20my%20number%20as%20......" class="btn-cta" target="_blank">
-                START REGISTRATION <i class="fas fa-arrow-right"></i>
+            <a href="#intakeForm" class="btn-cta">
+                START REGISTRATION <i class="fas fa-arrow-down"></i>
             </a>
         </div>
     </header>
@@ -640,12 +557,6 @@
                     <blockquote>"Thank you Base Digital for the great service, communication was efficient and the process was so comfortable and fast!"</blockquote>
                 </div>
             </div>
-
-            <div class="center-btn">
-                <a href="https://wa.me/2348026281150?text=Hello%20Kolade%2C%0AI%20would%20like%20to%20know%20more%20about%20registering%20my%20business%20with%20the%20Corporate%20Affairs%20Commission%20(CAC).%0ASave%20my%20number%20as%20......" class="btn-cta" target="_blank">
-                    START REGISTRATION <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
         </div>
     </section>
 
@@ -664,50 +575,114 @@
         </div>
     </section>
 
+    <section class="container" id="intakeForm" style="scroll-margin-top: 100px;">
+        <div style="background: var(--purple-card); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 24px; padding: 40px; box-shadow: 0 15px 40px rgba(0,0,0,0.35);">
+            <h2 style="font-family: 'Montserrat', sans-serif; text-align: center; font-size: 1.8rem; font-weight: 800; color: var(--gold-accent); margin-bottom: 10px;">Start Your Application</h2>
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 30px;">Select your registration path below to fill out your exact requirements setup.</p>
+            
+            <div style="margin-bottom: 25px; max-width: 500px; margin-left: auto; margin-right: auto;">
+                <label for="regType" style="display: block; font-weight: 600; margin-bottom: 8px; font-size: 0.9rem; color: #fff;">Choose Registration Type:</label>
+                <select id="regType" onchange="toggleRegistrationForm()" style="width: 100%; background: var(--bg-space); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 14px; color: #fff; font-size: 1rem; font-weight: 500; outline: none; cursor: pointer; font-family: inherit;">
+                    <option value="none">-- Select Package Path --</option>
+                    <option value="bname">Business Name Registration (Sole Proprietor / Partners)</option>
+                    <option value="company">Limited Liability Company (LTD Setup)</option>
+                    <option value="church">Church / NGO / Association (Incorporated Trustee)</option>
+                </select>
+            </div>
+
+            <div id="dynamicFormFields" style="max-width: 600px; margin: 0 auto; display: none; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 25px;">
+                
+                <div style="margin-bottom: 18px;">
+                    <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px;">1st Choice Proposed Name *</label>
+                    <input type="text" id="propName1" placeholder="e.g., VisioReach Digital Concepts" style="width: 100%; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 14px; border-radius: 6px; color: #fff; outline: none; font-family: inherit;">
+                </div>
+                <div style="margin-bottom: 18px;">
+                    <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px;">2nd Choice Proposed Name *</label>
+                    <input type="text" id="propName2" placeholder="e.g., VisioReach Tech Studio" style="width: 100%; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 14px; border-radius: 6px; color: #fff; outline: none; font-family: inherit;">
+                </div>
+
+                <div id="boxBName" style="display: none;">
+                    <div style="margin-bottom: 18px;">
+                        <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px;">Nature of Business / Core Focus</label>
+                        <input type="text" id="bnNature" placeholder="e.g., General Retail, Farming, Tech Consultation Services" style="width: 100%; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 14px; border-radius: 6px; color: #fff; outline: none; font-family: inherit;">
+                    </div>
+                </div>
+
+                <div id="boxCompany" style="display: none;">
+                    <div style="margin-bottom: 18px;">
+                        <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px;">Proposed Share Capital (e.g., 1 Million Shares) *</label>
+                        <input type="text" id="coShares" placeholder="e.g., 1,000,000 Ordinary Shares" style="width: 100%; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 14px; border-radius: 6px; color: #fff; outline: none; font-family: inherit;">
+                    </div>
+                    <div style="margin-bottom: 18px;">
+                        <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px;">Number of Initial Directors *</label>
+                        <input type="number" id="coDirectors" placeholder="e.g., 2" style="width: 100%; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 14px; border-radius: 6px; color: #fff; outline: none; font-family: inherit;">
+                    </div>
+                </div>
+
+                <div id="boxChurch" style="display: none;">
+                    <div style="margin-bottom: 18px;">
+                        <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px;">Names of Nominated Board of Trustees *</label>
+                        <textarea id="trusteeNames" rows="3" placeholder="e.g., Trustee 1: Pastor John, Trustee 2: Sister Mary" style="width: 100%; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 14px; border-radius: 6px; color: #fff; outline: none; font-family: inherit; resize: vertical;"></textarea>
+                    </div>
+                    <div style="margin-bottom: 18px;">
+                        <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px;">Core Mission / Aims &amp; Objectives</label>
+                        <input type="text" id="churchAims" placeholder="e.g., To spread the gospel and offer humanitarian support" style="width: 100%; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 14px; border-radius: 6px; color: #fff; outline: none; font-family: inherit;">
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 35px;">
+                    <button onclick="submitIntakeToWhatsApp()" class="btn-cta" style="cursor: pointer; width: 100%; border: none;">
+                        Submit &amp; Process on WhatsApp <i class="fab fa-whatsapp"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="container">
         <div class="faq-section">
             <h2 class="section-title">Frequently Asked Questions</h2>
             
-            <div class="faq-container">
-                <div class="faq-item">
-                    <button class="faq-question">
+            <div class="faq-container" style="max-width: 850px; margin: 0 auto;">
+                <details style="background-color: var(--purple-card); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; margin-bottom: 15px; overflow: hidden; cursor: pointer;" onmouseover="this.style.borderColor='rgba(212, 175, 55, 0.3)'" onmouseout="this.style.borderColor='rgba(255, 255, 255, 0.05)'">
+                    <summary style="padding: 22px 30px; display: flex; justify-content: space-between; align-items: center; color: #ffffff; font-size: 1.05rem; font-weight: 600; list-style: none; outline: none;">
                         <span>What is the difference between a Business Name and a Limited Liability Company (LTD)?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>A Business Name is ideal for sole proprietors or small trades where the business owner and the business are seen as the same legal entity. A Limited Liability Company (LTD) treats the company as a completely separate legal entity, meaning your personal properties are fully protected if the business faces liabilities or debts.</p>
+                        <i class="fas fa-chevron-down" style="color: var(--gold-accent);"></i>
+                    </summary>
+                    <div style="background-color: rgba(7, 9, 19, 0.4); padding: 0 30px 25px 30px; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+                        <p style="padding-top: 10px;">A Business Name is ideal for sole proprietors or small trades where the business owner and the business are seen as the same legal entity. A Limited Liability Company (LTD) treats the company as a completely separate legal entity, meaning your personal properties are fully protected if the business faces liabilities or debts.</p>
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item">
-                    <button class="faq-question">
+                <details style="background-color: var(--purple-card); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; margin-bottom: 15px; overflow: hidden; cursor: pointer;" onmouseover="this.style.borderColor='rgba(212, 175, 55, 0.3)'" onmouseout="this.style.borderColor='rgba(255, 255, 255, 0.05)'">
+                    <summary style="padding: 22px 30px; display: flex; justify-content: space-between; align-items: center; color: #ffffff; font-size: 1.05rem; font-weight: 600; list-style: none; outline: none;">
                         <span>What documents do I need to provide for registration?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>For a basic registration, you will only need to provide two proposed business names, your valid means of government identification (e.g., NIN, Voter's Card, International Passport, or Driver's License), your passport photograph, signature scan, and basic business details.</p>
+                        <i class="fas fa-chevron-down" style="color: var(--gold-accent);"></i>
+                    </summary>
+                    <div style="background-color: rgba(7, 9, 19, 0.4); padding: 0 30px 25px 30px; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+                        <p style="padding-top: 10px;">For a basic registration, you will only need to provide two proposed business names, your valid means of government identification (e.g., NIN, Voter's Card, International Passport, or Driver's License), your passport photograph, signature scan, and basic business details.</p>
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item">
-                    <button class="faq-question">
+                <details style="background-color: var(--purple-card); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; margin-bottom: 15px; overflow: hidden; cursor: pointer;" onmouseover="this.style.borderColor='rgba(212, 175, 55, 0.3)'" onmouseout="this.style.borderColor='rgba(255, 255, 255, 0.05)'">
+                    <summary style="padding: 22px 30px; display: flex; justify-content: space-between; align-items: center; color: #ffffff; font-size: 1.05rem; font-weight: 600; list-style: none; outline: none;">
                         <span>Will I get a Tax Identification Number (TIN) automatically?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes! Under current regulations, once your Limited Liability Company (LTD) registration is fully approved by the Corporate Affairs Commission (CAC), your corporate Tax Identification Number (TIN) is generated automatically and printed right on your certificate.</p>
+                        <i class="fas fa-chevron-down" style="color: var(--gold-accent);"></i>
+                    </summary>
+                    <div style="background-color: rgba(7, 9, 19, 0.4); padding: 0 30px 25px 30px; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+                        <p style="padding-top: 10px;">Yes! Under current regulations, once your Limited Liability Company (LTD) registration is fully approved by the Corporate Affairs Commission (CAC), your corporate Tax Identification Number (TIN) is generated automatically and printed right on your certificate.</p>
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item">
-                    <button class="faq-question">
+                <details style="background-color: var(--purple-card); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; margin-bottom: 15px; overflow: hidden; cursor: pointer;" onmouseover="this.style.borderColor='rgba(212, 175, 55, 0.3)'" onmouseout="this.style.borderColor='rgba(255, 255, 255, 0.05)'">
+                    <summary style="padding: 22px 30px; display: flex; justify-content: space-between; align-items: center; color: #ffffff; font-size: 1.05rem; font-weight: 600; list-style: none; outline: none;">
                         <span>What happens if my proposed business names are rejected?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>If the CAC rejects your initial choices because the names are too similar to an existing brand or contain prohibited words, don't worry! We will work closely with you to submit fresh alternatives immediately at no extra name-search cost to you.</p>
+                        <i class="fas fa-chevron-down" style="color: var(--gold-accent);"></i>
+                    </summary>
+                    <div style="background-color: rgba(7, 9, 19, 0.4); padding: 0 30px 25px 30px; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+                        <p style="padding-top: 10px;">If the CAC rejects your initial choices because the names are too similar to an existing brand or contain prohibited words, don't worry! We will work closely with you to submit fresh alternatives immediately at no extra name-search cost to you.</p>
                     </div>
-                </div>
+                </details>
             </div>
         </div>
     </section>
@@ -722,17 +697,11 @@
                 <img src="certificate-proof.jpg" alt="TIN Tax Certificate" class="proof-img">
             </div>
             <div class="proof-wrapper">
-                <img src="proof3.jpg" alt="CAC Certificate Proof" class="proof-img">
+                <img src="proof3.jpeg" alt="CAC Certificate Proof" class="proof-img">
             </div>
             <div class="proof-wrapper">
-                <img src="proof4.jpg" alt="Business Registration Proof" class="proof-img">
+                <img src="proof4.jpeg" alt="Business Registration Proof" class="proof-img">
             </div>
-        </div>
-        
-        <div class="center-btn">
-            <a href="https://wa.me/2348026281150?text=Hello%20Kolade%2C%0AI%20would%20like%20to%20know%20more%20about%20registering%20my%20business%20with%20the%20Corporate%20Affairs%20Commission%20(CAC).%0ASave%20my%20number%20as%20......" class="btn-cta" target="_blank">
-                START REGISTRATION <i class="fas fa-arrow-right"></i>
-            </a>
         </div>
     </section>
 
@@ -742,7 +711,7 @@
             Designed with <i class="fas fa-heart" style="color: #e74c3c; margin: 0 3px;"></i> by 
             <a href="https://visioreach.co" target="_blank" style="color: var(--gold-accent); text-decoration: none; font-weight: 700; transition: color 0.3s;">VisioReach Concepts</a>
         </p>
-    
+        <p class="carrd-tag" style="color: rgba(255,255,255,0.15); margin-top: 12px; font-weight: 600; letter-spacing: 1px;">( MADE WITH HTML & CSS )</p>
     </footer>
 
     <a href="tel:+2348026281150" class="floating-call-btn" style="position: fixed; bottom: 30px; right: 30px; z-index: 1000; text-decoration: none;">
@@ -752,30 +721,71 @@
     </a>
 
     <script>
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const faqItem = button.parentElement;
-                const faqAnswer = button.nextElementSibling;
+        function toggleRegistrationForm() {
+            const selector = document.getElementById('regType').value;
+            const formWrapper = document.getElementById('dynamicFormFields');
+            
+            const boxBN = document.getElementById('boxBName');
+            const boxCO = document.getElementById('boxCompany');
+            const boxCH = document.getElementById('boxChurch');
 
-                // Toggle Active Class for target container item
-                faqItem.classList.toggle('active');
+            if (selector === 'none') {
+                formWrapper.style.display = 'none';
+                return;
+            }
 
-                // Dynamic height calculations for smooth fluid rendering transitions
-                if (faqItem.classList.contains('active')) {
-                    faqAnswer.style.maxHeight = faqAnswer.scrollHeight + "px";
-                } else {
-                    faqAnswer.style.maxHeight = "0px";
-                }
+            formWrapper.style.display = 'block';
 
-                // Autoclose competing active toggles to save layout space
-                document.querySelectorAll('.faq-item').forEach(otherItem => {
-                    if (otherItem !== faqItem && otherItem.classList.contains('active')) {
-                        otherItem.classList.remove('active');
-                        otherItem.querySelector('.faq-answer').style.maxHeight = "0px";
-                    }
-                });
-            });
-        });
+            // Reset field states
+            boxBN.style.display = 'none';
+            boxCO.style.display = 'none';
+            boxCH.style.display = 'none';
+
+            // Mount custom inputs dynamically matching choice
+            if (selector === 'bname') {
+                boxBN.style.display = 'block';
+            } else if (selector === 'company') {
+                boxCO.style.display = 'block';
+            } else if (selector === 'church') {
+                boxCH.style.display = 'block';
+            }
+        }
+
+        function submitIntakeToWhatsApp() {
+            const regType = document.getElementById('regType').value;
+            const name1 = document.getElementById('propName1').value.trim();
+            const name2 = document.getElementById('propName2').value.trim();
+
+            if (!name1 || !name2) {
+                alert("Please enter both your 1st and 2nd choices for the business name verification.");
+                return;
+            }
+
+            let packageLabel = "";
+            let customDetailsText = "";
+
+            if (regType === 'bname') {
+                packageLabel = "Business Name Registration";
+                const nature = document.getElementById('bnNature').value.trim() || "Not specified";
+                customDetailsText = `• Nature of Business: ${nature}`;
+            } else if (regType === 'company') {
+                packageLabel = "Limited Liability Company (LTD)";
+                const shares = document.getElementById('coShares').value.trim() || "1,000,000 Ordinary Shares Default";
+                const directors = document.getElementById('coDirectors').value.trim() || "Not specified";
+                customDetailsText = `• Proposed Share Capital: ${shares}\n• Number of Directors: ${directors}`;
+            } else if (regType === 'church') {
+                packageLabel = "Church / NGO / Association (Trusteeship)";
+                const trustees = document.getElementById('trusteeNames').value.trim() || "Not specified";
+                const aims = document.getElementById('churchAims').value.trim() || "Not specified";
+                customDetailsText = `• Nominated Trustees:\n${trustees}\n• Core Objectives: ${aims}`;
+            }
+
+            // Structure the secure custom text notification string blocks for WhatsApp routing
+            const finalMessage = `Hello Kolade,\n\nI want to initiate a corporate filing registration setup on your system.\n\n*APPLICATION PROFILE DEVELOPMENT DETAILS:*\n• *Package selected:* ${packageLabel}\n• *1st Name Choice:* ${name1}\n• *2nd Name Choice:* ${name2}\n${customDetailsText}\n\nKindly advise on the payment verification parameters and verification timeline to finalize processing. Thank you!`;
+
+            const encodedURL = "https://wa.me/2348026281150?text=" + encodeURIComponent(finalMessage);
+            window.open(encodedURL, '_blank');
+        }
     </script>
 
 </body>

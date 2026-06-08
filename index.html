@@ -73,7 +73,7 @@
             letter-spacing: 2px;
         }
 
-        /* Hero / Header Section */
+        /* Hero Section */
         .hero {
             text-align: center;
             padding: 80px 20px 40px 20px;
@@ -93,7 +93,7 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Call-To-Action Button Design */
+        /* Button Design */
         .btn-cta {
             display: inline-flex;
             align-items: center;
@@ -847,7 +847,7 @@
                         </div>
                         <h5>KENDANIES STORE</h5>
                     </div>
-                    blockquote>"Thank you base digital for exceeding my expectations. The follow up, the feedback and responses were excellent. You guys really helped me and cleared all my doubts. Now I have my small business registered and I'm on my way to open my business bank account. I'll def recommend you to my friends. Thank you 😊"</blockquote>
+                    <blockquote>"Thank you base digital for exceeding my expectations. The follow up, the feedback and responses were excellent. You guys really helped me and cleared all my doubts. Now I have my small business registered and I'm on my way to open my business bank account. I'll def recommend you to my friends. Thank you 😊"</blockquote>
                 </div>
 
                 <div class="testimonial-card">
@@ -881,19 +881,23 @@
     <section class="container" id="intakeForm" style="scroll-margin-top: 100px;">
         <div style="background: var(--purple-card); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 24px; padding: 40px; box-shadow: 0 15px 40px rgba(0,0,0,0.35);">
             <h2 style="font-family: 'Montserrat', sans-serif; text-align: center; font-size: 1.8rem; font-weight: 800; color: var(--gold-accent); margin-bottom: 10px;">Corporate Registration Portal</h2>
-            <p style="text-align: center; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 30px;">Select your specific corporate setup track below to mount your filing requirements.</p>
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 30px;">Select your specific corporate setup or data track below to mount your filing requirements.</p>
             
             <div style="margin-bottom: 35px; max-width: 500px; margin-left: auto; margin-right: auto; display: grid; gap: 15px;">
                 <div>
-                    <label for="regType">Choose Registration Type:</label>
+                    <label for="regType">Choose Service Type:</label>
                     <select id="regType" onchange="toggleRegistrationForm()">
-                        <option value="none">-- Select Package Track --</option>
+                        <option value="none">-- Select Service Track --</option>
                         <option value="bname">Business Name Registration</option>
                         <option value="company">Limited Liability Company (LTD)</option>
                         <option value="church">Incorporated Trustee (Church / NGO / Association)</option>
+                        <option value="trademark">Trademark Registration</option>
+                        <option value="nin">NIN Slip Reprint Service</option>
+                        <option value="indpub">Individual Newspaper Publication</option>
+                        <option value="ngopub">NGO Newspaper Publication</option>
                     </select>
                 </div>
-                <div>
+                <div id="tierWrapper">
                     <label for="packageTier">Select Package Tier:</label>
                     <select id="packageTier">
                         <option value="none">-- Choose Package Tier --</option>
@@ -909,54 +913,57 @@
                 <div class="form-grid">
                     
                     <!-- BUSINESS NAME TRACK -->
-                    <div id="sectionBName" class="form-grid" style="grid-column: span 2; display: none;">
-                        <div class="form-section-title">Name Availability Search</div>
-                        <div class="form-group"><label>Option 1 (Preferred Business Name) *</label><input type="text" id="bn_name1" placeholder="First Choice"></div>
-                        <div class="form-group"><label>Option 2 *</label><input type="text" id="bn_name2" placeholder="Second Choice"></div>
-
+                    <div id="section_bname" class="form-grid" style="grid-column: span 2; display: none;">
                         <div class="form-section-title">Personal Information</div>
-                        <div class="form-group"><label>Surname *</label><input type="text" id="bn_surname" placeholder="Opatola"></div>
-                        <div class="form-group"><label>First Name *</label><input type="text" id="bn_firstName" placeholder="Kolade"></div>
-                        <div class="form-group"><label>Other Name</label><input type="text" id="bn_otherName" placeholder="Hezekiah"></div>
-                        <div class="form-group"><label>Date of Birth *</label><input type="date" id="bn_dob"></div>
-                        <div class="form-group"><label>Gender *</label><select id="bn_gender"><option value="">-- Select --</option><option>Male</option><option>Female</option></select></div>
-                        <div class="form-group"><label>Phone Number *</label><input type="tel" id="bn_phone" placeholder="08026281150"></div>
-                        <div class="form-group"><label>NIN *</label><input type="text" id="bn_nin" placeholder="11 Digits National ID"></div>
-                        <div class="form-group"><label>Functional Email Address *</label><input type="email" id="bn_email" placeholder="client@example.com"></div>
+                        <div class="form-group"><label>1. Surname *</label><input type="text" id="bn_surname" placeholder="Surname"></div>
+                        <div class="form-group"><label>2. First Name *</label><input type="text" id="bn_firstName" placeholder="First Name"></div>
+                        <div class="form-group"><label>3. Other Name</label><input type="text" id="bn_otherName" placeholder="Other Name"></div>
+                        <div class="form-group"><label>4. Date of Birth * (YY/MM/DD)</label><input type="text" id="bn_dob" placeholder="e.g. 85/11/24"></div>
+                        <div class="form-group"><label>5. Gender *</label><select id="bn_gender"><option value="">-- Select --</option><option>Male</option><option>Female</option></select></div>
+                        <div class="form-group"><label>6. Phone Number *</label><input type="tel" id="bn_phone" placeholder="Phone Number"></div>
+                        <div class="form-group"><label>7. NIN *</label><input type="text" id="bn_nin" placeholder="11 Digits National ID"></div>
+                        <div class="form-group"><label>8. Functional Email Address *</label><input type="email" id="bn_email" placeholder="email@example.com"></div>
 
-                        <div class="form-section-title">Addresses &amp; Nature</div>
-                        <div class="form-group full-width"><label>Full Residential Address *</label><textarea id="bn_resAddress" rows="2" placeholder="House No, Street name, City, LGA, State"></textarea></div>
-                        <div class="form-group full-width"><label>Full Business Address *</label><textarea id="bn_busAddress" rows="2" placeholder="If same as residential, type 'Same as above'"></textarea></div>
-                        <div class="form-group full-width"><label>Nature / Line of Business *</label><input type="text" id="bn_nature" placeholder="e.g., Retail trading, ICT consulting"></div>
+                        <div class="form-section-title">9. Business Name Availability Search</div>
+                        <div class="form-group"><label>Business Name 1 *</label><input type="text" id="bn_name1" placeholder="First Choice Options"></div>
+                        <div class="form-group"><label>Business Name 2 *</label><input type="text" id="bn_name2" placeholder="Second Choice Options"></div>
 
-                        <!-- SCUML Module Hook (Conditional presentation for Business Name Premium/Executive) -->
-                        <div class="form-section-title">SCUML Verification Assets</div>
-                        <div class="form-group"><label>Account Details of Owner</label><input type="text" id="bn_scumlAcc" placeholder="Bank Name &amp; Account Number"></div>
-                        <div class="form-group"><label>BVN of Business Owner</label><input type="text" id="bn_scumlBvn" placeholder="11-digit BVN"></div>
+                        <div class="form-section-title">10. Your Home Address</div>
+                        <div class="form-group"><label>State *</label><input type="text" id="bn_homeState" placeholder="State"></div>
+                        <div class="form-group"><label>LGA *</label><input type="text" id="bn_homeLga" placeholder="LGA"></div>
+                        <div class="form-group"><label>City/Town/Village *</label><input type="text" id="bn_homeCity" placeholder="City / Town / Village"></div>
+                        <div class="form-group"><label>House Number *</label><input type="text" id="bn_homeHouseNo" placeholder="e.g. 12"></div>
+                        <div class="form-group full-width"><label>Street Name *</label><input type="text" id="bn_homeStreet" placeholder="Street Name"></div>
 
-                        <!-- TaxProMax & FIRS Section for Business Name -->
-                        <div class="form-section-title">TaxProMax &amp; FIRS track Metrics</div>
-                        <div class="form-group"><label>Commencement Date</label><input type="date" id="bn_commencement"></div>
-                        <div class="form-group"><label>Accounting Year End</label><input type="text" id="bn_yearend" placeholder="e.g., December 31st"></div>
-                        <div class="form-group"><label>Authorized Person Name</label><input type="text" id="bn_authPerson"></div>
-                        <div class="form-group"><label>FIRS TIN Number (If already registered)</label><input type="text" id="bn_firsTin"></div>
+                        <div class="form-section-title">11. Your Business Address</div>
+                        <div class="form-group"><label>State *</label><input type="text" id="bn_busState" placeholder="State"></div>
+                        <div class="form-group"><label>LGA *</label><input type="text" id="bn_busLga" placeholder="LGA"></div>
+                        <div class="form-group"><label>City/Town/Village *</label><input type="text" id="bn_busCity" placeholder="City / Town / Village"></div>
+                        <div class="form-group"><label>House Number *</label><input type="text" id="bn_busHouseNo" placeholder="e.g. 14B"></div>
+                        <div class="form-group full-width"><label>Street Name *</label><input type="text" id="bn_busStreet" placeholder="Street Name"></div>
 
-                        <div class="form-section-title">Supporting Documents checklist</div>
+                        <div class="form-section-title">12. Nature of Business (Up to 4 options)</div>
+                        <div class="form-group"><label>Nature 1 *</label><input type="text" id="bn_nat1" placeholder="Primary line of business"></div>
+                        <div class="form-group"><label>Nature 2</label><input type="text" id="bn_nat2" placeholder="Option 2"></div>
+                        <div class="form-group"><label>Nature 3</label><input type="text" id="bn_nat3" placeholder="Option 3"></div>
+                        <div class="form-group"><label>Nature 4</label><input type="text" id="bn_nat4" placeholder="Option 4"></div>
+
+                        <div class="form-section-title">Supporting Documents Submission Checklist</div>
                         <div class="form-group full-width">
-                            <p style="font-size: 0.85rem; color: var(--gold-accent); margin-bottom: 10px;"><i class="fas fa-info-circle"></i> Ensure you scan or photograph your Signature paper, Passport image, and NIN slip reprint cleanly to drop directly on WhatsApp.</p>
-                            <div class="checkbox-group"><input type="checkbox" id="bn_chk1"><label for="bn_chk1" style="margin:0; cursor:pointer;">NIN Slip Reprint Data Checked</label></div>
-                            <div class="checkbox-group"><input type="checkbox" id="bn_chk2"><label for="bn_chk2" style="margin:0; cursor:pointer;">Signature Scan and Passport Photo Ready</label></div>
+                            <div class="checkbox-group"><input type="checkbox" id="bn_chk1"><label for="bn_chk1" style="margin:0; cursor:pointer;">13. ID Card (Clearly snapped government issued ID ready)</label></div>
+                            <div class="checkbox-group"><input type="checkbox" id="bn_chk2"><label for="bn_chk2" style="margin:0; cursor:pointer;">14. Passport (Clearly snapped passport photo ready)</label></div>
+                            <div class="checkbox-group"><input type="checkbox" id="bn_chk3"><label for="bn_chk3" style="margin:0; cursor:pointer;">15. Signature (Clearly snapped signature on a plain white paper ready)</label></div>
                         </div>
                     </div>
 
                     <!-- LIMITED LIABILITY COMPANY (LTD) TRACK -->
-                    <div id="sectionCompany" class="form-grid" style="grid-column: span 2; display: none;">
+                    <div id="section_company" class="form-grid" style="grid-column: span 2; display: none;">
                         <div class="form-section-title">Name Availability Search</div>
-                        <div class="form-group"><label>Option 1 (Must end in LTD or LIMITED) *</label><input type="text" id="co_name1" placeholder="e.g., Tech Solutions LTD"></div>
-                        <div class="form-group"><label>Option 2 (Must end in LTD or LIMITED) *</label><input type="text" id="co_name2" placeholder="e.g., Tech Solutions Limited"></div>
+                        <div class="form-group"><label>Option 1 (Must end in LTD) *</label><input type="text" id="co_name1" placeholder="e.g., Tech Solutions LTD"></div>
+                        <div class="form-group"><label>Option 2 (Must end in LTD) *</label><input type="text" id="co_name2" placeholder="e.g., Tech Solutions Limited"></div>
 
                         <div class="form-section-title">Company Structural Core Metrics</div>
-                        <div class="form-group"><label>State (As it is on CAC Doc) *</label><input type="text" id="co_state" placeholder="e.g., Lagos"></div>
+                        <div class="form-group"><label>State *</label><input type="text" id="co_state" placeholder="e.g., Lagos"></div>
                         <div class="form-group"><label>Local Government Area (LGA) *</label><input type="text" id="co_lga" placeholder="e.g., Ikeja"></div>
                         <div class="form-group full-width"><label>Complete Company Address *</label><textarea id="co_address" rows="2" placeholder="Full operational location structural address"></textarea></div>
                         <div class="form-group"><label>Company Phone Number *</label><input type="tel" id="co_phone"></div>
@@ -970,66 +977,77 @@
                         <div class="form-group"><label>NIN *</label><input type="text" id="co_dirNin" placeholder="11 Digits National ID"></div>
                         <div class="form-group"><label>Director Phone Number *</label><input type="tel" id="co_dirPhone"></div>
                         <div class="form-group"><label>Director Email Address *</label><input type="email" id="co_dirEmail"></div>
-                        <div class="form-group"><label>Date of Birth * (Only required if NIN is not available)</label><input type="date" id="co_dirDob"></div>
-                        <div class="form-group"><label>Shares Allotted * (e.g., 1,000,000)</label><input type="text" id="co_dirShares" value="1,000,000"></div>
-
-                        <div class="form-section-title">TaxProMax &amp; SCUML Parameters</div>
-                        <div class="form-group"><label>Commencement Date *</label><input type="date" id="co_commenceDate"></div>
-                        <div class="form-group"><label>Accounting Year End *</label><input type="text" id="co_yearEnd" placeholder="e.g., December 31st"></div>
-                        <div class="form-group"><label>FIRS TIN Number (If available)</label><input type="text" id="co_firsTin"></div>
-                        <div class="form-group"><label>Account Details of Owner</label><input type="text" id="co_scumlAcc" placeholder="Bank Name &amp; Account Number"></div>
-                        <div class="form-group full-width"><label>BVN of Trustee / Owner</label><input type="text" id="co_scumlBvn" placeholder="11-digit BVN"></div>
-
-                        <div class="form-section-title">Media Verifications checklist</div>
-                        <div class="form-group full-width">
-                            <div class="checkbox-group"><input type="checkbox" id="co_chk1"><label for="co_chk1" style="margin:0; cursor:pointer;">Director Government ID Card and Signature Scan Ready</label></div>
-                            <div class="checkbox-group"><input type="checkbox" id="co_chk2"><label for="co_chk2" style="margin:0; cursor:pointer;">CAC Core Supporting Files package set for WhatsApp drop</label></div>
-                        </div>
                     </div>
 
                     <!-- INCORPORATED TRUSTEE (NGO/CHURCH) TRACK -->
-                    <div id="sectionTrustee" class="form-grid" style="grid-column: span 2; display: none;">
+                    <div id="section_church" class="form-grid" style="grid-column: span 2; display: none;">
                         <div class="form-section-title">Trustee Declaration Profile</div>
-                        <div class="form-group full-width"><label>Name of Organisation / Association *</label><input type="text" id="tr_orgName" placeholder="Proposed Name of NGO / Church"></div>
-                        <div class="form-group"><label>Full Name of Principal Trustee *</label><input type="text" id="tr_trusteeFullName" placeholder="Surname First Name Middle Name"></div>
-                        <div class="form-group"><label>NIN *</label><input type="text" id="tr_nin" placeholder="11-digit Identification Number"></div>
-                        <div class="form-group"><label>First Name (as on NIN) *</label><input type="text" id="tr_fName"></div>
-                        <div class="form-group"><label>Middle Name</label><input type="text" id="tr_mName"></div>
-                        <div class="form-group"><label>Last Name (Surname) *</label><input type="text" id="tr_lName"></div>
-                        <div class="form-group full-width"><label>Residential Address *</label><textarea id="tr_resAddress" rows="2" placeholder="Full residential layout structural parameters"></textarea></div>
-                        <div class="form-group"><label>Date of Birth * (Only fill if NIN is not available)</label><input type="date" id="tr_dob"></div>
-                        <div class="form-group"><label>Official Email Address *</label><input type="email" id="tr_email"></div>
-
-                        <div class="form-section-title">NGO Trustees Nominal List (Up to 5 Allowed)</div>
-                        <div class="form-group"><label>Trustee 1 *</label><input type="text" id="tr_list1" placeholder="Principal Name"></div>
-                        <div class="form-group"><label>Trustee 2</label><input type="text" id="tr_list2"></div>
-                        <div class="form-group"><label>Trustee 3</label><input type="text" id="tr_list3"></div>
-                        <div class="form-group"><label>Trustee 4</label><input type="text" id="tr_list4"></div>
-                        <div class="form-group"><label>Trustee 5</label><input type="text" id="tr_list5"></div>
-
-                        <div class="form-section-title">Core Aims and Objectives</div>
-                        <div class="form-group"><label>Aim 1 *</label><input type="text" id="tr_aim1"></div>
-                        <div class="form-group"><label>Aim 2</label><input type="text" id="tr_aim2"></div>
-                        <div class="form-group"><label>Aim 3</label><input type="text" id="tr_aim3"></div>
-                        <div class="form-group"><label>Aim 4</label><input type="text" id="tr_aim4"></div>
-                        <div class="form-group"><label>Aim 5</label><input type="text" id="tr_aim5"></div>
-
-                        <div class="form-section-title">Individual / NGO Newspaper Publication Data</div>
-                        <div class="form-group"><label>Former Name (Include Title)</label><input type="text" id="tr_pubOld" placeholder="e.g., Mr. John Doe"></div>
-                        <div class="form-group"><label>New Name (Include Title)</label><input type="text" id="tr_pubNew" placeholder="e.g., Pastor John Doe"></div>
-
-                        <div class="form-section-title">SCUML Certificate Parameters</div>
-                        <div class="form-group"><label>Account Details of Trustee/Owner</label><input type="text" id="tr_scumlAcc" placeholder="Bank and Account number"></div>
-                        <div class="form-group"><label>BVN of Trustee/Owner</label><input type="text" id="tr_scumlBvn" placeholder="11 digits"></div>
-
-                        <div class="form-section-title">FIRS TIN FAST TRACK Mapping</div>
-                        <div class="form-group"><label>State (As it is on CAC Doc)</label><input type="text" id="tr_firsState"></div>
-                        <div class="form-group"><label>Local Government Area (LGA)</label><input type="text" id="tr_firsLga"></div>
+                        <div class="form-group full-width"><label>✅ Name of Organisation *</label><input type="text" id="tr_orgName" placeholder="Proposed Name of NGO / Church / Association"></div>
+                        <div class="form-group full-width"><label>✅ Full Name of Trustee *</label><input type="text" id="tr_trusteeFullName" placeholder="Surname First Name Middle Name"></div>
+                        <div class="form-group full-width"><label>✅ RESIDENTIAL Address *</label><textarea id="tr_resAddress" rows="2" placeholder="Full residential layout structural parameters"></textarea></div>
 
                         <div class="form-section-title">Upload Checklists Verification</div>
                         <div class="form-group full-width">
-                            <div class="checkbox-group"><input type="checkbox" id="tr_chk1"><label for="tr_chk1" style="margin:0; cursor:pointer;">Signature Specimen ready to drop on WhatsApp (neat snapshot)</label></div>
-                            <div class="checkbox-group"><input type="checkbox" id="tr_chk2"><label for="tr_chk2" style="margin:0; cursor:pointer;">Passport photo ready to drop on WhatsApp (neat snapshot)</label></div>
+                            <div class="checkbox-group"><input type="checkbox" id="tr_chk1"><label for="tr_chk1" style="margin:0; cursor:pointer;">Signature (Snap neatly and send on WhatsApp)</label></div>
+                            <div class="checkbox-group"><input type="checkbox" id="tr_chk2"><label for="tr_chk2" style="margin:0; cursor:pointer;">Passport (Snap neatly and send on WhatsApp)</label></div>
+                        </div>
+                    </div>
+
+                    <!-- NEWLY ADDED TRADEMARK REGISTRATION TRACK -->
+                    <div id="section_trademark" class="form-grid" style="grid-column: span 2; display: none;">
+                        <div class="form-section-title">Trademark Requirements Sheet</div>
+                        <div class="form-group"><label>Proposed Trademark Name *</label><input type="text" id="tm_name" placeholder="Trademark Name"></div>
+                        <div class="form-group"><label>Surname *</label><input type="text" id="tm_surname" placeholder="Surname"></div>
+                        <div class="form-group"><label>First Name *</label><input type="text" id="tm_firstname" placeholder="First Name"></div>
+                        <div class="form-group"><label>Middle Name</label><input type="text" id="tm_middlename" placeholder="Middle Name"></div>
+                        <div class="form-group full-width"><label>Business/Company Name *</label><input type="text" id="tm_bizName" placeholder="Registered Business or Corporate Entity name"></div>
+                        <div class="form-group full-width"><label>Business/Company Address *</label><textarea id="tm_address" rows="2" placeholder="Full operational corporate address layout"></textarea></div>
+                        <div class="form-group"><label>Class of Business *</label><input type="text" id="tm_class" placeholder="e.g. Class 35, Class 41"></div>
+                        <div class="form-group"><label>Phone Number *</label><input type="tel" id="tm_phone" placeholder="Phone Number"></div>
+                        <div class="form-group"><label>Email *</label><input type="email" id="tm_email" placeholder="email@domain.com"></div>
+                        <div class="form-group full-width">
+                            <div class="checkbox-group"><input type="checkbox" id="tm_logoChk"><label for="tm_logoChk" style="margin:0; cursor:pointer;">Logo Image (If applicable, file image is ready to send via WhatsApp)</label></div>
+                        </div>
+                    </div>
+
+                    <!-- STANDALONE NIN SLIP REPRINT SERVICE -->
+                    <div id="section_nin" class="form-grid" style="grid-column: span 2; display: none;">
+                        <div class="form-section-title">NIN Slip Reprint Data Sheet</div>
+                        <div class="form-group"><label>First Name *</label><input type="text" id="nin_fName" placeholder="First Name"></div>
+                        <div class="form-group"><label>Middle Name</label><input type="text" id="nin_mName" placeholder="Middle Name"></div>
+                        <div class="form-group"><label>Last Name *</label><input type="text" id="nin_lName" placeholder="Last Name / Surname"></div>
+                        <div class="form-group"><label>NIN Number</label><input type="text" id="nin_val" placeholder="11-digit NIN (if available)"></div>
+                        <div class="form-group full-width"><label>Date of Birth (Only fill if NIN is not available)</label><input type="date" id="nin_dob"></div>
+                    </div>
+
+                    <!-- STANDALONE INDIVIDUAL NEWSPAPER PUBLICATION -->
+                    <div id="section_indpub" class="form-grid" style="grid-column: span 2; display: none;">
+                        <div class="form-section-title">Individual Newspaper Publication Form</div>
+                        <div class="form-group"><label>Former Name (Include title) *</label><input type="text" id="ind_former" placeholder="e.g., Miss Jane Doe"></div>
+                        <div class="form-group"><label>New Name (Include title) *</label><input type="text" id="ind_new" placeholder="e.g., Mrs. Jane Smith"></div>
+                    </div>
+
+                    <!-- STANDALONE NGO NEWSPAPER PUBLICATION -->
+                    <div id="section_ngopub" class="form-grid" style="grid-column: span 2; display: none;">
+                        <div class="form-section-title">NGO Newspaper Publication Core Data</div>
+                        <div class="form-group full-width"><label>Name of NGO/Organization *</label><input type="text" id="ngo_pub_name" placeholder="Name of Organization"></div>
+                        
+                        <div class="form-section-title">TRUSTEES (List the names of the trustees below)</div>
+                        <div class="form-group full-width" style="display:grid; gap:10px;">
+                            <input type="text" id="ngo_t1" placeholder="1. Full Name of Trustee *">
+                            <input type="text" id="ngo_t2" placeholder="2. Full Name of Trustee">
+                            <input type="text" id="ngo_t3" placeholder="3. Full Name of Trustee">
+                            <input type="text" id="ngo_t4" placeholder="4. Full Name of Trustee">
+                            <input type="text" id="ngo_t5" placeholder="5. Full Name of Trustee">
+                        </div>
+
+                        <div class="form-section-title">AIMS AND OBJECTIVES</div>
+                        <div class="form-group full-width" style="display:grid; gap:10px;">
+                            <input type="text" id="ngo_aim1" placeholder="1. Core Aim/Objective *">
+                            <input type="text" id="ngo_aim2" placeholder="2. Aim/Objective">
+                            <input type="text" id="ngo_aim3" placeholder="3. Aim/Objective">
+                            <input type="text" id="ngo_aim4" placeholder="4. Aim/Objective">
+                            <input type="text" id="ngo_aim5" placeholder="5. Aim/Objective">
                         </div>
                     </div>
 
@@ -1067,26 +1085,6 @@
                         <p style="padding-top: 10px;">For a basic registration, you will only need to provide two proposed business names, your valid means of government identification (e.g., NIN, Voter's Card, International Passport, or Driver's License), your passport photograph, signature scan, and basic business details.</p>
                     </div>
                 </details>
-
-                <details style="background-color: var(--purple-card); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; margin-bottom: 15px; overflow: hidden; cursor: pointer;" onmouseover="this.style.borderColor='rgba(212, 175, 55, 0.3)'" onmouseout="this.style.borderColor='rgba(255, 255, 255, 0.05)'">
-                    <summary style="padding: 22px 30px; display: flex; justify-content: space-between; align-items: center; color: #ffffff; font-size: 1.05rem; font-weight: 600; list-style: none; outline: none;">
-                        <span>Will I get a Tax Identification Number (TIN) automatically?</span>
-                        <i class="fas fa-chevron-down" style="color: var(--gold-accent);"></i>
-                    </summary>
-                    <div style="background-color: rgba(7, 9, 19, 0.4); padding: 0 30px 25px 30px; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-                        <p style="padding-top: 10px;">Yes! Under current regulations, once your Limited Liability Company (LTD) registration is fully approved by the Corporate Affairs Commission (CAC), your corporate Tax Identification Number (TIN) is generated automatically and printed right on your certificate.</p>
-                    </div>
-                </details>
-
-                <details style="background-color: var(--purple-card); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; margin-bottom: 15px; overflow: hidden; cursor: pointer;" onmouseover="this.style.borderColor='rgba(212, 175, 55, 0.3)'" onmouseout="this.style.borderColor='rgba(255, 255, 255, 0.05)'">
-                    <summary style="padding: 22px 30px; display: flex; justify-content: space-between; align-items: center; color: #ffffff; font-size: 1.05rem; font-weight: 600; list-style: none; outline: none;">
-                        <span>What happens if my proposed business names are rejected?</span>
-                        <i class="fas fa-chevron-down" style="color: var(--gold-accent);"></i>
-                    </summary>
-                    <div style="background-color: rgba(7, 9, 19, 0.4); padding: 0 30px 25px 30px; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-                        <p style="padding-top: 10px;">If the CAC rejects your initial choices because the names are too similar to an existing brand or contain prohibited words, don't worry! We will work closely with you to submit fresh alternatives immediately at no extra name-search cost to you.</p>
-                    </div>
-                </details>
             </div>
         </div>
     </section>
@@ -1094,27 +1092,16 @@
     <section class="proof-section container">
         <h3 class="section-title proof-title">Approved Registrations Proof</h3>
         <div class="proof-grid">
-            <div class="proof-wrapper">
-                <img src="dashboard-proof.jpg" alt="CAC Approved Dashboard" class="proof-img">
-            </div>
-            <div class="proof-wrapper">
-                <img src="certificate-proof.jpg" alt="TIN Tax Certificate" class="proof-img">
-            </div>
-            <div class="proof-wrapper">
-                <img src="proof3.jpg" alt="CAC Certificate Proof" class="proof-img">
-            </div>
-            <div class="proof-wrapper">
-                <img src="proof4.jpg" alt="Business Registration Proof" class="proof-img">
-            </div>
+            <div class="proof-wrapper"><img src="dashboard-proof.jpg" alt="CAC Approved Dashboard" class="proof-img"></div>
+            <div class="proof-wrapper"><img src="certificate-proof.jpg" alt="TIN Tax Certificate" class="proof-img"></div>
+            <div class="proof-wrapper"><img src="proof3.jpg" alt="CAC Certificate Proof" class="proof-img"></div>
+            <div class="proof-wrapper"><img src="proof4.jpg" alt="Business Registration Proof" class="proof-img"></div>
         </div>
     </section>
 
     <footer style="text-align: center; padding: 60px 20px 100px 20px; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.05);">
         <p>&copy; 2026 BASE DIGITAL GLOBAL CONSULTANCY LIMITED. ALL RIGHTS RESERVED.</p>
-        <p style="margin-top: 8px; font-weight: 500;">
-            Designed with <i class="fas fa-heart" style="color: #e74c3c; margin: 0 3px;"></i> by 
-            <a href="https://visioreach.co" target="_blank" style="color: var(--gold-accent); text-decoration: none; font-weight: 700; transition: color 0.3s;">VisioReach Concepts</a>
-        </p>
+        <p style="margin-top: 8px; font-weight: 500;">Designed with <i class="fas fa-heart" style="color: #e74c3c; margin: 0 3px;"></i> by <a href="https://visioreach.co" target="_blank" style="color: var(--gold-accent); text-decoration: none; font-weight: 700; transition: color 0.3s;">VisioReach Concepts</a></p>
     </footer>
 
     <a href="tel:+2348026281150" class="floating-call-btn" style="position: fixed; bottom: 30px; right: 30px; z-index: 1000; text-decoration: none;">
@@ -1127,10 +1114,17 @@
         function toggleRegistrationForm() {
             const track = document.getElementById('regType').value;
             const fieldsWrapper = document.getElementById('dynamicFormFields');
+            const tierWrapper = document.getElementById('tierWrapper');
             
-            const bnameBlock = document.getElementById('sectionBName');
-            const companyBlock = document.getElementById('sectionCompany');
-            const trusteeBlock = document.getElementById('sectionTrustee');
+            const blocks = {
+                bname: document.getElementById('section_bname'),
+                company: document.getElementById('section_company'),
+                church: document.getElementById('section_church'),
+                trademark: document.getElementById('section_trademark'),
+                nin: document.getElementById('section_nin'),
+                indpub: document.getElementById('section_indpub'),
+                ngopub: document.getElementById('section_ngopub')
+            };
 
             if (track === 'none') {
                 fieldsWrapper.style.display = 'none';
@@ -1138,13 +1132,21 @@
             }
 
             fieldsWrapper.style.display = 'block';
-            bnameBlock.style.display = 'none';
-            companyBlock.style.display = 'none';
-            trusteeBlock.style.display = 'none';
+            
+            for (let key in blocks) {
+                if(blocks[key]) blocks[key].style.display = 'none';
+            }
 
-            if (track === 'bname') bnameBlock.style.display = 'grid';
-            if (track === 'company') companyBlock.style.display = 'grid';
-            if (track === 'church') trusteeBlock.style.display = 'grid';
+            // Hide package options for standalone specialized workflows
+            if (track === 'nin' || track === 'indpub' || track === 'ngopub' || track === 'trademark') {
+                tierWrapper.style.display = 'none';
+            } else {
+                tierWrapper.style.display = 'block';
+            }
+
+            if (blocks[track]) {
+                blocks[track].style.display = 'grid';
+            }
         }
 
         function selectPackage(trackValue, tierValue) {
@@ -1163,74 +1165,167 @@
             const tier = document.getElementById('packageTier').value;
             let payloadText = "";
 
-            if (tier === 'none') {
+            if ((track === 'bname' || track === 'company' || track === 'church') && tier === 'none') {
                 alert("Please select your preferred package tier before submitting."); return;
             }
 
-            // ════════════════ PROCESS OPTION 1: BUSINESS NAME ════════════════
+            // ════════════════ BUSINESS NAME REGISTRATION ════════════════
             if (track === 'bname') {
-                if (!document.getElementById('bn_chk1').checked || !document.getElementById('bn_chk2').checked) {
-                    alert("Please verify all supporting validation file checkboxes are checked."); return;
+                if (!document.getElementById('bn_chk1').checked || !document.getElementById('bn_chk2').checked || !document.getElementById('bn_chk3').checked) {
+                    alert("Please verify all supporting document checkboxes are acknowledged."); return;
                 }
-                const fields = ['bn_name1','bn_name2','bn_surname','bn_firstName','bn_otherName','bn_dob','bn_gender','bn_phone','bn_nin','bn_email','bn_resAddress','bn_busAddress','bn_nature','bn_scumlAcc','bn_scumlBvn','bn_commencement','bn_yearend','bn_authPerson','bn_firsTin'];
+                
+                const fields = ['bn_surname','bn_firstName','bn_otherName','bn_dob','bn_gender','bn_phone','bn_nin','bn_email','bn_name1','bn_name2','bn_homeState','bn_homeLga','bn_homeCity','bn_homeHouseNo','bn_homeStreet','bn_busState','bn_busLga','bn_busCity','bn_busHouseNo','bn_busStreet','bn_nat1','bn_nat2','bn_nat3','bn_nat4'];
                 let d = {}; fields.forEach(f => d[f] = document.getElementById(f).value.trim());
 
-                if (!d.bn_name1 || !d.bn_surname || !d.bn_firstName || !d.bn_phone || !d.bn_nin || !d.bn_email || !d.bn_resAddress || !d.bn_nature) {
-                    alert("Please fulfill all mandatory variables for Business Name track."); return;
+                if (!d.bn_surname || !d.bn_firstName || !d.bn_dob || !d.bn_phone || !d.bn_nin || !d.bn_email || !d.bn_name1 || !d.bn_homeState || !d.bn_homeLga || !d.bn_homeCity || !d.bn_homeStreet || !d.bn_busState || !d.bn_busLga || !d.bn_busCity || !d.bn_busStreet || !d.bn_nat1) {
+                    alert("Please satisfy all mandatory parameters marked with *."); return;
                 }
 
-                payloadText = `Hello Base Digital,\n\nI want to process a *BUSINESS NAME REGISTRATION*.\n` +
-                              `• *SELECTED TIER*: ${tier}\n\n` +
-                              `*1. NAME AVAILABILITY SEARCH*\n• Option 1: ${d.bn_name1}\n• Option 2: ${d.bn_name2 || 'N/A'}\n\n` +
-                              `*2. PERSONAL INFORMATION*\n• Name: ${d.bn_surname} ${d.bn_firstName} ${d.bn_otherName}\n• DOB: ${d.bn_dob}\n• Gender: ${d.bn_gender}\n• Phone: ${d.bn_phone}\n• NIN: ${d.bn_nin}\n• Email: ${d.bn_email}\n\n` +
-                              `*3. ADDRESS MAPS & NATURE*\n• Residential: ${d.bn_resAddress}\n• Business Address: ${d.bn_busAddress}\n• Nature of Business: ${d.bn_nature}\n\n` +
-                              `*4. SCUML CERTIFICATE METRICS*\n• Account details: ${d.bn_scumlAcc || 'N/A'}\n• BVN: ${d.bn_scumlBvn || 'N/A'}\n\n` +
-                              `*5. TAXPROMAX / FIRS SYSTEM INFO*\n• Commencement Date: ${d.bn_commencement || 'N/A'}\n• Accounting Year End: ${d.bn_yearend || 'N/A'}\n• Authorized Representative: ${d.bn_authPerson || 'N/A'}\n• Existing FIRS TIN: ${d.bn_firsTin || 'N/A'}\n\n` +
-                              `✔ Media Assets & NIN reprint pack are ready to drop below.`;
+                payloadText = `BUSINESS NAME REGISTRATION FORM\n` +
+                              `Package Tier: ${tier}\n\n` +
+                              `1. Surname: ${d.bn_surname}\n` +
+                              `2. First name: ${d.bn_firstName}\n` +
+                              `3. Other name: ${d.bn_otherName || 'N/A'}\n` +
+                              `4. Date of birth: ${d.bn_dob}\n` +
+                              `5. Gender: ${d.bn_gender}\n` +
+                              `6. Phone number: ${d.bn_phone}\n` +
+                              `7. NIN: ${d.bn_nin}\n` +
+                              `8. Functional Email address: ${d.bn_email}\n` +
+                              `9. Business Name 1: ${d.bn_name1}\n` +
+                              `   Business Name 2: ${d.bn_name2 || 'N/A'}\n\n` +
+                              `10. *YOUR HOME ADDRESS*\n` +
+                              `State: ${d.bn_homeState}\n` +
+                              `LGA: ${d.bn_homeLga}\n` +
+                              `City/Town/Village: ${d.bn_homeCity}\n` +
+                              `House Number: ${d.bn_homeHouseNo || 'N/A'}\n` +
+                              `Street Name: ${d.bn_homeStreet}\n\n` +
+                              `11. *YOUR BUSINESS ADDRESS*\n` +
+                              `State: ${d.bn_busState}\n` +
+                              `LGA: ${d.bn_busLga}\n` +
+                              `City/Town/Village: ${d.bn_busCity}\n` +
+                              `House Number: ${d.bn_busHouseNo || 'N/A'}\n` +
+                              `Street Name: ${d.bn_busStreet}\n\n` +
+                              `12. Nature of business:\n` +
+                              `     1. ${d.bn_nat1}\n` +
+                              `     2. ${d.bn_nat2 || 'N/A'}\n` +
+                              `     3. ${d.bn_nat3 || 'N/A'}\n` +
+                              `     4. ${d.bn_nat4 || 'N/A'}\n\n` +
+                              `*SUPPORTING DOCUMENTS*:\n` +
+                              `✔ ID Card, Passport, and Specimen Signature are ready to transmit.`;
             }
 
-            // ════════════════ PROCESS OPTION 2: COMPANY (LTD) ════════════════
-            else if (track === 'company') {
-                if (!document.getElementById('co_chk1').checked || !document.getElementById('co_chk2').checked) {
-                    alert("Please verify all supporting document check-parameters before filing."); return;
-                }
-                const fields = ['co_name1','co_name2','co_state','co_lga','co_address','co_phone','co_email','co_nature','co_dirSurname','co_dirFirst','co_dirMiddle','co_dirNin','co_dirPhone','co_dirEmail','co_dirDob','co_dirShares','co_commenceDate','co_yearEnd','co_firsTin','co_scumlAcc','co_scumlBvn'];
+            // ════════════════ TRADEMARK REQUIREMENT ════════════════
+            else if (track === 'trademark') {
+                const fields = ['tm_name','tm_surname','tm_firstname','tm_middlename','tm_bizName','tm_address','tm_class','tm_phone','tm_email'];
                 let d = {}; fields.forEach(f => d[f] = document.getElementById(f).value.trim());
 
-                if (!d.co_name1 || !d.co_state || !d.co_lga || !d.co_address || !d.co_phone || !d.co_email || !d.co_nature || !d.co_dirSurname || !d.co_dirFirst || !d.co_dirNin || !d.co_dirPhone || !d.co_dirEmail || !d.co_commenceDate || !d.co_yearEnd) {
-                    alert("Please satisfy all mandatory company structure parameters."); return;
+                if (!d.tm_name || !d.tm_surname || !d.tm_firstname || !d.tm_bizName || !d.tm_address || !d.tm_class || !d.tm_phone || !d.tm_email) {
+                    alert("Please provide all required core values for the Trademark application."); return;
+                }
+
+                const logoSent = document.getElementById('tm_logoChk').checked ? "Provided (Ready on WhatsApp)" : "Not Applicable / Plain Text Name Only";
+
+                payloadText = `*TRADEMARK REQUIREMENT*\n\n` +
+                              `Proposed Trademark Name : ${d.tm_name}\n` +
+                              `Surname: ${d.tm_surname}\n` +
+                              `First Name: ${d.tm_firstname}\n` +
+                              `Middle Name: ${d.tm_middlename || 'N/A'}\n` +
+                              `Business/Company Address: ${d.tm_address}\n` +
+                              `Class of Business: ${d.tm_class}\n` +
+                              `Phone Number: ${d.tm_phone}\n` +
+                              `Business/Company Name: ${d.tm_bizName}\n` +
+                              `Email: ${d.tm_email}\n` +
+                              `Logo: ${logoSent}`;
+            }
+
+            // ════════════════ TRUSTEE DECLARATION FORM ════════════════
+            else if (track === 'church') {
+                if (!document.getElementById('tr_chk1').checked || !document.getElementById('tr_chk2').checked) {
+                    alert("Please acknowledge that both validation files are ready to dispatch."); return;
+                }
+                const org = document.getElementById('tr_orgName').value.trim();
+                const trustee = document.getElementById('tr_trusteeFullName').value.trim();
+                const address = document.getElementById('tr_resAddress').value.trim();
+
+                if (!org || !trustee || !address) {
+                    alert("Please populate all basic Trustee metrics."); return;
+                }
+
+                payloadText = `TRUSTEE DECLARATION FORM:\n\n` +
+                              `✅️Name of Organisation : ${org}\n` +
+                              `✅️Full name of Trustee : ${trustee}\n` +
+                              `✅️RESIDENTIAL Address: ${address}\n\n` +
+                              `✔ Signature Specimen & Passport layout drop ready.`;
+            }
+
+            // ════════════════ COMPANY (LTD) ════════════════
+            else if (track === 'company') {
+                const fields = ['co_name1','co_name2','co_state','co_lga','co_address','co_phone','co_email','co_nature','co_dirSurname','co_dirFirst','co_dirMiddle','co_dirNin','co_dirPhone','co_dirEmail'];
+                let d = {}; fields.forEach(f => d[f] = document.getElementById(f).value.trim());
+
+                if (!d.co_name1 || !d.co_state || !d.co_address || !d.co_phone || !d.co_email || !d.co_dirSurname || !d.co_dirFirst || !d.co_dirNin) {
+                    alert("Please fulfill key company filing metrics."); return;
                 }
 
                 payloadText = `Hello Base Digital,\n\nI want to process a *LIMITED LIABILITY COMPANY (LTD)* filing.\n` +
-                              `• *SELECTED TIER*: ${tier}\n\n` +
-                              `*1. NAME AVAILABILITY SEARCH*\n• Option 1: ${d.co_name1}\n• Option 2: ${d.co_name2 || 'N/A'}\n\n` +
-                              `*2. COMPANY DETAILS*\n• Corporate Address: ${d.co_address}\n• State: ${d.co_state} | LGA: ${d.co_lga}\n• Phone: ${d.co_phone} | Email: ${d.co_email}\n• Line of Business: ${d.co_nature}\n\n` +
-                              `*3. DIRECTOR / AUTHORIZED PERSON*\n• Name: ${d.co_dirSurname} ${d.co_dirFirst} ${d.co_dirMiddle}\n• NIN: ${d.co_dirNin}\n• Phone: ${d.co_dirPhone} | Email: ${d.co_dirEmail}\n• DOB (If alternate ID): ${d.co_dirDob || 'N/A'}\n• Share Capital Allotted: ${d.co_dirShares}\n\n` +
-                              `*4. TAXPROMAX & SCUML MATRIX*\n• Commencement Date: ${d.co_commenceDate}\n• Accounting Year End: ${d.co_yearEnd}\n• FIRS TIN (If existing): ${d.co_firsTin || 'N/A'}\n• Account details: ${d.co_scumlAcc || 'N/A'}\n• BVN: ${d.co_scumlBvn || 'N/A'}\n\n` +
-                              `✔ Media package, signature verification sheet, and dashboard proof are ready to drop below.`;
+                              `• Package Tier: ${tier}\n\n` +
+                              `• Option 1: ${d.co_name1}\n• Option 2: ${d.co_name2 || 'N/A'}\n` +
+                              `• Corporate Location: ${d.co_address}, ${d.co_lga}, ${d.co_state}\n` +
+                              `• Company Contact: ${d.co_phone} | ${d.co_email}\n` +
+                              `• Corporate Nature: ${d.co_nature}\n\n` +
+                              `• Director Profile: ${d.co_dirSurname} ${d.co_dirFirst} ${d.co_dirMiddle || ''}\n` +
+                              `• Director Contact/NIN: Phone: ${d.co_dirPhone} | Email: ${d.co_dirEmail} | NIN: ${d.co_dirNin}`;
             }
 
-            // ════════════════ PROCESS OPTION 3: INCORPORATED TRUSTEES ════════════════
-            else if (track === 'church') {
-                if (!document.getElementById('tr_chk1').checked || !document.getElementById('tr_chk2').checked) {
-                    alert("Please acknowledge that passport and signature files are ready for verification."); return;
-                }
-                const fields = ['tr_orgName','tr_trusteeFullName','tr_nin','tr_fName','tr_mName','tr_lName','tr_resAddress','tr_dob','tr_email','tr_list1','tr_list2','tr_list3','tr_list4','tr_list5','tr_aim1','tr_aim2','tr_aim3','tr_aim4','tr_aim5','tr_pubOld','tr_pubNew','tr_scumlAcc','tr_scumlBvn','tr_firsState','tr_firsLga'];
-                let d = {}; fields.forEach(f => d[f] = document.getElementById(f).value.trim());
+            // ════════════════ STANDALONE NIN REPRINT ════════════════
+            else if (track === 'nin') {
+                const fName = document.getElementById('nin_fName').value.trim();
+                const mName = document.getElementById('nin_mName').value.trim();
+                const lName = document.getElementById('nin_lName').value.trim();
+                const ninVal = document.getElementById('nin_val').value.trim();
+                const dob = document.getElementById('nin_dob').value.trim();
 
-                if (!d.tr_orgName || !d.tr_trusteeFullName || !d.tr_nin || !d.tr_fName || !d.tr_lName || !d.tr_resAddress || !d.tr_email || !d.tr_list1 || !d.tr_aim1) {
-                    alert("Please fill in the core mandatory Trustee operational metrics."); return;
+                if (!fName || !lName) {
+                    alert("Please fill out at least First Name and Last Name."); return;
                 }
 
-                payloadText = `Hello Base Digital,\n\nI want to register an *INCORPORATED TRUSTEE (NGO/CHURCH)*.\n` +
-                              `• *SELECTED TIER*: ${tier}\n\n` +
-                              `*1. TRUSTEE DECLARATION FORM*\n• Organisation Name: ${d.tr_orgName}\n• Full Name of Trustee: ${d.tr_trusteeFullName}\n• Residential Address: ${d.tr_resAddress}\n• Email: ${d.tr_email}\n\n` +
-                              `*2. NIN SLIP REPRINT INFO*\n• First Name: ${d.tr_fName} | Middle: ${d.tr_mName || 'N/A'} | Last: ${d.tr_lName}\n• NIN: ${d.tr_nin}\n• DOB: ${d.tr_dob || 'N/A'}\n\n` +
-                              `*3. TRUSTEES NOMINAL LIST*\n• 1. ${d.tr_list1}\n• 2. ${d.tr_list2 || 'N/A'}\n• 3. ${d.tr_list3 || 'N/A'}\n• 4. ${d.tr_list4 || 'N/A'}\n• 5. ${d.tr_list5 || 'N/A'}\n\n` +
-                              `*4. AIMS AND OBJECTIVES*\n• 1. ${d.tr_aim1}\n• 2. ${d.tr_aim2 || 'N/A'}\n• 3. ${d.tr_aim3 || 'N/A'}\n• 4. ${d.tr_aim4 || 'N/A'}\n• 5. ${d.tr_aim5 || 'N/A'}\n\n` +
-                              `*5. INDIVIDUAL / NGO NEWSPAPER PUBLICATION*\n• Former Name: ${d.tr_pubOld || 'N/A'}\n• New Name: ${d.tr_pubNew || 'N/A'}\n\n` +
-                              `*6. SCUML & FIRS FAST TRACK METRICS*\n• Account details: ${d.tr_scumlAcc || 'N/A'}\n• BVN: ${d.tr_scumlBvn || 'N/A'}\n• State: ${d.tr_firsState || 'N/A'} | LGA: ${d.tr_firsLga || 'N/A'}\n\n` +
-                              `✔ Passport & Signature snaps verified ready for deployment.`;
+                payloadText = `Hello Base Digital,\n\nI need an operational *NIN SLIP REPRINT* service.\n\n` +
+                              `• First Name: ${fName}\n• Middle Name: ${mName || 'N/A'}\n• Last Name: ${lName}\n` +
+                              `• NIN: ${ninVal || 'N/A'}\n• Date of Birth: ${dob || 'N/A'}`;
+            }
+
+            // ════════════════ INDIVIDUAL NEWSPAPER PUBLICATION ════════════════
+            else if (track === 'indpub') {
+                const former = document.getElementById('ind_former').value.trim();
+                const newName = document.getElementById('ind_new').value.trim();
+
+                if (!former || !newName) { alert("Please input both fields."); return; }
+
+                payloadText = `Hello Base Digital,\n\nI want to request an *INDIVIDUAL NEWSPAPER PUBLICATION*.\n\n` +
+                              `• Former Name: ${former}\n• New Name: ${newName}`;
+            }
+
+            // ════════════════ NGO NEWSPAPER PUBLICATION ════════════════
+            else if (track === 'ngopub') {
+                const orgName = document.getElementById('ngo_pub_name').value.trim();
+                if (!orgName) { alert("Please provide the organization name."); return; }
+
+                let trustees = [];
+                for (let i = 1; i <= 5; i++) {
+                    let val = document.getElementById(`ngo_t${i}`).value.trim();
+                    if(val) trustees.push(`${i}. ${val}`);
+                }
+                let aims = [];
+                for (let i = 1; i <= 5; i++) {
+                    let val = document.getElementById(`ngo_aim${i}`).value.trim();
+                    if(val) aims.push(`${i}. ${val}`);
+                }
+
+                payloadText = `Hello Base Digital,\n\nI want to request an *NGO NEWSPAPER PUBLICATION*.\n\n` +
+                              `• *ORGANIZATION NAME*: ${orgName}\n\n` +
+                              `*TRUSTEES LIST*:\n${trustees.join('\n') || 'N/A'}\n\n` +
+                              `*AIMS AND OBJECTIVES*:\n${aims.join('\n') || 'N/A'}`;
             }
 
             const url = "https://wa.me/2348026281150?text=" + encodeURIComponent(payloadText);

@@ -54,11 +54,11 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        /* Sticky Glassmorphism Navbar */
+        /* Sticky Navbar */
         .navbar {
             position: sticky;
             top: 0;
-            background: rgba(7, 9, 19, 0.75);
+            background: rgba(7, 9, 19, 0.85);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -93,7 +93,7 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Button Design */
+        /* Call To Action Buttons */
         .btn-cta {
             display: inline-flex;
             align-items: center;
@@ -128,7 +128,7 @@
             transform: translateX(4px);
         }
 
-        /* Premium Pricing Section Styles */
+        /* Pricing Section Styles */
         .pricing-section {
             padding: 60px 0;
         }
@@ -142,15 +142,15 @@
         }
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
             margin-bottom: 40px;
         }
         .pricing-card {
             background: var(--purple-card);
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 16px;
-            padding: 25px;
+            padding: 30px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -161,42 +161,42 @@
             border-color: var(--gold-accent);
         }
         .pricing-header h3 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: #fff;
             margin-bottom: 10px;
         }
         .pricing-price {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: 800;
             color: var(--green-accent);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         .pricing-features {
             list-style: none;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: var(--text-muted);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         .pricing-features li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             display: flex;
             align-items: flex-start;
         }
         .pricing-features li i {
             color: var(--gold-accent);
-            margin-right: 8px;
-            margin-top: 3px;
+            margin-right: 10px;
+            margin-top: 4px;
         }
         .btn-select-pack {
             background: transparent;
             border: 1px solid var(--gold-accent);
             color: var(--gold-accent);
-            padding: 10px;
+            padding: 12px;
             border-radius: 8px;
             font-weight: 700;
             cursor: pointer;
             text-transform: uppercase;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             letter-spacing: 0.5px;
             transition: all 0.3s ease;
             text-align: center;
@@ -207,7 +207,7 @@
             color: var(--bg-space);
         }
 
-        /* Form Styling Elements */
+        /* Layout Grid System */
         .form-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -217,10 +217,10 @@
         .form-section-title {
             grid-column: span 2;
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 700;
             color: var(--gold-accent);
-            margin: 25px 0 10px 0;
+            margin: 30px 0 10px 0;
             padding-bottom: 8px;
             border-bottom: 1px dashed rgba(255,255,255,0.1);
             text-transform: uppercase;
@@ -280,7 +280,7 @@
             accent-color: var(--green-accent);
         }
 
-        /* Premium Sales Card (Flyer Section) */
+        /* Sales Flyer Card Layout */
         .flyer-card {
             background: #ffffff;
             color: #1e2229;
@@ -388,7 +388,6 @@
             font-size: 1.1rem;
         }
 
-        /* Expert Profile Sidebar */
         .expert-profile {
             text-align: center;
             background-color: #f8fafc;
@@ -433,7 +432,7 @@
             letter-spacing: 1px;
         }
 
-        /* Testimonials Section */
+        /* Testimonials Styles */
         .testimonials-section {
             background: linear-gradient(180deg, rgba(24,21,40,0.6) 0%, rgba(11,13,23,0) 100%);
             border-top: 1px solid rgba(255,255,255,0.05);
@@ -522,7 +521,7 @@
             left: -10px;
         }
 
-        /* Authority Facts Section */
+        /* Authority Building Layout */
         .facts-section {
             background: rgba(255,255,255,0.02);
             border: 1px solid rgba(255,255,255,0.05);
@@ -576,7 +575,6 @@
             font-size: 0.9rem;
         }
 
-        /* Proof Section Layout */
         .proof-title {
             font-size: 1.8rem;
             font-weight: 800;
@@ -585,8 +583,8 @@
 
         .proof-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
         }
 
         .proof-wrapper {
@@ -608,9 +606,17 @@
             display: block;
         }
 
-        /* Responsive Mobile Breakpoints */
+        .floating-call-btn {
+            position: fixed; 
+            bottom: 30px; 
+            right: 30px; 
+            z-index: 1000; 
+            text-decoration: none;
+        }
+
+        /* 100% Fluid Responsive Mobile Overrides */
         @media (max-width: 850px) {
-            .flyer-card, .testimonials-grid, .proof-grid, .form-grid {
+            .flyer-card, .testimonials-grid, .form-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
@@ -648,10 +654,11 @@
         </div>
     </header>
 
-    <!-- Pricing Packages Reference Section -->
+    <!-- Pricing Packages Section -->
     <section class="pricing-section container">
         <h2 class="section-title">Our Premium Corporate Packages</h2>
         
+        <!-- Category: Business Names -->
         <div class="pricing-category-title">Business Name Packages</div>
         <div class="pricing-grid">
             <div class="pricing-card">
@@ -665,7 +672,7 @@
                         <li><i class="fas fa-check-circle"></i> Delivery via email</li>
                     </ul>
                 </div>
-                <button class="btn-select-pack" onclick="selectPackage('bname', 'Basic Package (₦40,000)')">Choose Basic</button>
+                <button class="btn-select-pack" onclick="selectPackage('bname', 'Basic Package')">Choose Basic</button>
             </div>
             <div class="pricing-card">
                 <div class="pricing-header">
@@ -679,7 +686,7 @@
                         <li><i class="fas fa-check-circle"></i> Hard copy physical delivery</li>
                     </ul>
                 </div>
-                <button class="btn-select-pack" onclick="selectPackage('bname', 'Standard Package (₦100,000)')">Choose Standard</button>
+                <button class="btn-select-pack" onclick="selectPackage('bname', 'Standard Package')">Choose Standard</button>
             </div>
             <div class="pricing-card">
                 <div class="pricing-header">
@@ -692,22 +699,11 @@
                         <li><i class="fas fa-check-circle"></i> Business account opening support</li>
                     </ul>
                 </div>
-                <button class="btn-select-pack" onclick="selectPackage('bname', 'Premium Package (₦170,000)')">Choose Premium</button>
-            </div>
-            <div class="pricing-card">
-                <div class="pricing-header">
-                    <h3>Executive Package</h3>
-                    <div class="pricing-price">₦220,000</div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-plus-circle"></i> Everything in Premium, plus:</li>
-                        <li><i class="fas fa-check-circle"></i> Trademark Registration</li>
-                        <li><i class="fas fa-check-circle"></i> Hard copy physical delivery</li>
-                    </ul>
-                </div>
-                <button class="btn-select-pack" onclick="selectPackage('bname', 'Executive Package (₦220,000)')">Choose Executive</button>
+                <button class="btn-select-pack" onclick="selectPackage('bname', 'Premium Package')">Choose Premium</button>
             </div>
         </div>
 
+        <!-- Category: Companies -->
         <div class="pricing-category-title">Limited Liability Company (LTD)</div>
         <div class="pricing-grid">
             <div class="pricing-card">
@@ -721,7 +717,7 @@
                         <li><i class="fas fa-check-circle"></i> Digital copies of all documents</li>
                     </ul>
                 </div>
-                <button class="btn-select-pack" onclick="selectPackage('company', 'Basic Package (₦70,000)')">Choose Basic</button>
+                <button class="btn-select-pack" onclick="selectPackage('company', 'Basic Package')">Choose Basic</button>
             </div>
             <div class="pricing-card">
                 <div class="pricing-header">
@@ -735,7 +731,7 @@
                         <li><i class="fas fa-check-circle"></i> Hardcopy documentation delivery</li>
                     </ul>
                 </div>
-                <button class="btn-select-pack" onclick="selectPackage('company', 'Standard Package (₦130,000)')">Choose Standard</button>
+                <button class="btn-select-pack" onclick="selectPackage('company', 'Standard Package')">Choose Standard</button>
             </div>
             <div class="pricing-card">
                 <div class="pricing-header">
@@ -748,69 +744,61 @@
                         <li><i class="fas fa-check-circle"></i> Bank account support &amp; Tax registration guidance</li>
                     </ul>
                 </div>
-                <button class="btn-select-pack" onclick="selectPackage('company', 'Premium Package (₦200,000)')">Choose Premium</button>
-            </div>
-            <div class="pricing-card">
-                <div class="pricing-header">
-                    <h3>Executive Package</h3>
-                    <div class="pricing-price">₦250,000</div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-plus-circle"></i> Everything in Premium, plus:</li>
-                        <li><i class="fas fa-check-circle"></i> Trademark Registration track</li>
-                        <li><i class="fas fa-check-circle"></i> Annual Return Reminders activation</li>
-                    </ul>
-                </div>
-                <button class="btn-select-pack" onclick="selectPackage('company', 'Executive Package (₦250,000)')">Choose Executive</button>
+                <button class="btn-select-pack" onclick="selectPackage('company', 'Premium Package')">Choose Premium</button>
             </div>
         </div>
 
-        <div class="pricing-category-title">Incorporated Trustees (NGO/Church)</div>
+        <!-- Category: Incorporated Trustees [UPDATED] -->
+        <div class="pricing-category-title">Incorporated Trustees (NGOs, Churches, Associations)</div>
         <div class="pricing-grid">
             <div class="pricing-card">
                 <div class="pricing-header">
                     <h3>Basic Package</h3>
-                    <div class="pricing-price">₦130,000</div>
+                    <div class="pricing-price">₦150,000</div>
                     <ul class="pricing-features">
-                        <li><i class="fas fa-check-circle"></i> Name Search &amp; Reservation</li>
+                        <li><i class="fas fa-check-circle"></i> Name availability search &amp; reservation</li>
                         <li><i class="fas fa-check-circle"></i> Newspaper Publication handling</li>
                         <li><i class="fas fa-check-circle"></i> Constitution drafting assistance</li>
-                        <li><i class="fas fa-check-circle"></i> Trustee declaration filing (3 Trustees)</li>
-                        <li><i class="fas fa-check-circle"></i> Mail digital delivery of Certificate, Report &amp; Constitution</li>
+                        <li><i class="fas fa-check-circle"></i> Trustee declaration filing (3 trustees)</li>
+                        <li><i class="fas fa-check-circle"></i> CAC Incorporated Trustee registration</li>
+                        <li><i class="fas fa-check-circle"></i> Documents: Certificate, Status Report, Constitution</li>
+                        <li><i class="fas fa-check-circle"></i> Digital documents delivery via mail</li>
                     </ul>
                 </div>
-                <button class="btn-select-pack" onclick="selectPackage('church', 'Basic Package (₦130,000)')">Choose Basic</button>
+                <button class="btn-select-pack" onclick="selectPackage('church', 'Basic Package')">Choose Basic</button>
             </div>
             <div class="pricing-card">
                 <div class="pricing-header">
                     <h3>Standard Package</h3>
-                    <div class="pricing-price">₦190,000</div>
+                    <div class="pricing-price">₦200,000</div>
                     <ul class="pricing-features">
-                        <li><i class="fas fa-plus-circle"></i> Everything in Basic, plus:</li>
-                        <li><i class="fas fa-check-circle"></i> Extended Trustee declaration filing (5 Trustees)</li>
-                        <li><i class="fas fa-check-circle"></i> Graphic design bundle + frame</li>
-                        <li><i class="fas fa-check-circle"></i> Printed documents &amp; Tracking support</li>
-                        <li><i class="fas fa-check-circle"></i> Hard copy courier delivery</li>
+                        <li><i class="fas fa-plus-circle"></i> Includes everything in Basic, plus:</li>
+                        <li><i class="fas fa-check-circle"></i> Trustee declaration filing: 5 trustees</li>
+                        <li><i class="fas fa-check-circle"></i> Graphic design bundle (Logo, Flyer, Card, Letterhead, ID)</li>
+                        <li><i class="fas fa-check-circle"></i> Framed Certificate &amp; Printed documents</li>
+                        <li><i class="fas fa-check-circle"></i> Application tracking support &amp; Hard copies delivery</li>
                     </ul>
                 </div>
-                <button class="btn-select-pack" onclick="selectPackage('church', 'Standard Package (₦190,000)')">Choose Standard</button>
+                <button class="btn-select-pack" onclick="selectPackage('church', 'Standard Package')">Choose Standard</button>
             </div>
             <div class="pricing-card">
                 <div class="pricing-header">
                     <h3>Premium Package</h3>
-                    <div class="pricing-price">₦240,000</div>
+                    <div class="pricing-price">₦250,000</div>
                     <ul class="pricing-features">
-                        <li><i class="fas fa-plus-circle"></i> Everything in Standard, plus:</li>
-                        <li><i class="fas fa-check-circle"></i> Full SCUML Registration setup</li>
-                        <li><i class="fas fa-check-circle"></i> Trustee filing up to 5 trustees</li>
-                        <li><i class="fas fa-check-circle"></i> Customized constitution layout</li>
-                        <li><i class="fas fa-check-circle"></i> Compliance consultation &amp; Post-reg advisory</li>
+                        <li><i class="fas fa-plus-circle"></i> Includes everything in Standard, plus:</li>
+                        <li><i class="fas fa-check-circle"></i> SCUML REGISTRATION</li>
+                        <li><i class="fas fa-check-circle"></i> Trustee declaration filing: up to 5 trustees</li>
+                        <li><i class="fas fa-check-circle"></i> Customized constitution drafting</li>
+                        <li><i class="fas fa-check-circle"></i> Compliance consultation &amp; Post-registration advisory</li>
                     </ul>
                 </div>
-                <button class="btn-select-pack" onclick="selectPackage('church', 'Premium Package (₦240,000)')">Choose Premium</button>
+                <button class="btn-select-pack" onclick="selectPackage('church', 'Premium Package')">Choose Premium</button>
             </div>
         </div>
     </section>
 
+    <!-- Marketing Flyer Profile Card -->
     <section class="flyer-section">
         <div class="container">
             <div class="flyer-card">
@@ -842,6 +830,7 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
     <section class="testimonials-section">
         <div class="container">
             <h2 class="section-title">Customer Testimonials</h2>
@@ -869,6 +858,7 @@
         </div>
     </section>
 
+    <!-- Authority Points Block -->
     <section class="container">
         <div class="facts-section">
             <h3>7 FACTS ABOUT ME IN RELATION TO CAC</h3>
@@ -879,38 +869,39 @@
                 <li>I ALWAYS GIVE ORIGINAL CERTIFICATES.</li>
                 <li>I'VE NEVER ABANDONED MY REGISTRATIONS HALFWAY, UNLESS MY CLIENTS IS NO LONGER INTERESTED IN USING THAT NAME.</li>
                 <li>MY PRICES ARE ALWAYS VERY FAIR.</li>
-                <li>AND YES, I AM A COACH, TRAINING OTHER PEOPLE TO CARRY ON WITH THIS JOB.</li>
+                <li>AND YES, I AM a COACH, TRAINING OTHER PEOPLE TO CARRY ON WITH THIS JOB.</li>
             </ol>
         </div>
     </section>
 
+    <!-- Master Dynamic Corporate Forms Portal -->
     <section class="container" id="intakeForm" style="scroll-margin-top: 100px;">
         <div style="background: var(--purple-card); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 24px; padding: 40px; box-shadow: 0 15px 40px rgba(0,0,0,0.35);">
             <h2 style="font-family: 'Montserrat', sans-serif; text-align: center; font-size: 1.8rem; font-weight: 800; color: var(--gold-accent); margin-bottom: 10px;">Corporate Registration Portal</h2>
-            <p style="text-align: center; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 30px;">Select your specific corporate setup or data track below to mount your filing requirements.</p>
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 30px;">Select your processing track below to display customized setup fields.</p>
             
             <div style="margin-bottom: 35px; max-width: 500px; margin-left: auto; margin-right: auto; display: grid; gap: 15px;">
                 <div>
-                    <label for="regType">Choose Service Type:</label>
+                    <label for="regType">Choose Registration Category:</label>
                     <select id="regType" onchange="toggleRegistrationForm()">
-                        <option value="none">-- Select Service Track --</option>
-                        <option value="bname">Business Name Registration</option>
-                        <option value="company">Limited Liability Company (LTD)</option>
-                        <option value="church">Incorporated Trustee (Church / NGO / Association)</option>
-                        <option value="trademark">Trademark Registration</option>
-                        <option value="nin">NIN Slip Reprint Service</option>
-                        <option value="indpub">Individual Newspaper Publication</option>
-                        <option value="ngopub">NGO Newspaper Publication</option>
+                        <option value="none">-- Select Service Type --</option>
+                        <option value="bname">1. Business Name Registration Form</option>
+                        <option value="company">2. Limited Liability Company Registration Form</option>
+                        <option value="church">3. Incorporated Trustee Registration Form (NGO/Church)</option>
+                        <option value="scuml">6. SCUML Certificate Requirements</option>
+                        <option value="taxpromax">7. TAXPROMAX Requirements</option>
+                        <option value="firs">8. FIRS TIN Fast Track</option>
+                        <option value="search">9. Name Availability Search</option>
+                        <option value="trustee_dec">10. Trustee Declaration Form</option>
                     </select>
                 </div>
-                <div id="tierWrapper">
+                <div id="tierWrapper" style="display: none;">
                     <label for="packageTier">Select Package Tier:</label>
                     <select id="packageTier">
                         <option value="none">-- Choose Package Tier --</option>
                         <option value="Basic Package">Basic Package</option>
                         <option value="Standard Package">Standard Package</option>
                         <option value="Premium Package">Premium Package</option>
-                        <option value="Executive Package">Executive Package (LTD / Business Name Only)</option>
                     </select>
                 </div>
             </div>
@@ -918,79 +909,79 @@
             <div id="dynamicFormFields" style="display: none; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 25px;">
                 <div class="form-grid">
                     
-                    <!-- BUSINESS NAME TRACK -->
+                    <!-- FORM 1: BUSINESS NAME REGISTRATION -->
                     <div id="section_bname" class="form-grid" style="grid-column: span 2; display: none;">
-                        <div class="form-section-title">Personal Information</div>
+                        <div class="form-section-title">Personal Details</div>
                         <div class="form-group"><label>1. Surname *</label><input type="text" id="bn_surname" placeholder="Surname"></div>
                         <div class="form-group"><label>2. First Name *</label><input type="text" id="bn_firstName" placeholder="First Name"></div>
                         <div class="form-group"><label>3. Other Name</label><input type="text" id="bn_otherName" placeholder="Other Name"></div>
-                        <div class="form-group"><label>4. Date of Birth * (YY/MM/DD)</label><input type="text" id="bn_dob" placeholder="e.g. 85/11/24"></div>
+                        <div class="form-group"><label>4. Date of Birth *</label><input type="date" id="bn_dob"></div>
                         <div class="form-group"><label>5. Gender *</label><select id="bn_gender"><option value="">-- Select --</option><option>Male</option><option>Female</option></select></div>
                         <div class="form-group"><label>6. Phone Number *</label><input type="tel" id="bn_phone" placeholder="Phone Number"></div>
                         <div class="form-group"><label>7. NIN *</label><input type="text" id="bn_nin" placeholder="11 Digits National ID"></div>
-                        <div class="form-group"><label>8. Functional Email Address *</label><input type="email" id="bn_email" placeholder="email@example.com"></div>
-                        <div class="form-group"><label>8b. Occupation *</label><input type="text" id="bn_occupation" placeholder="Your Occupation"></div>
+                        <div class="form-group"><label>8. Functional Email address *</label><input type="email" id="bn_email" placeholder="email@example.com"></div>
+                        <div class="form-group"><label>8b. Occupation *</label><input type="text" id="bn_occupation" placeholder="Occupation"></div>
 
-                        <div class="form-section-title">9. Business Name Availability Search</div>
-                        <div class="form-group"><label>Business Name 1 *</label><input type="text" id="bn_name1" placeholder="First Choice Options"></div>
+                        <div class="form-section-title">Preferred Names</div>
+                        <div class="form-group"><label>9. Business Name 1 *</label><input type="text" id="bn_name1" placeholder="First Choice Options"></div>
                         <div class="form-group"><label>Business Name 2 *</label><input type="text" id="bn_name2" placeholder="Second Choice Options"></div>
 
                         <div class="form-section-title">10. Your Home Address</div>
-                        <div class="form-group"><label>State *</label><input type="text" id="bn_homeState" placeholder="State"></div>
-                        <div class="form-group"><label>LGA *</label><input type="text" id="bn_homeLga" placeholder="LGA"></div>
-                        <div class="form-group"><label>City/Town/Village *</label><input type="text" id="bn_homeCity" placeholder="City / Town / Village"></div>
-                        <div class="form-group"><label>House Number *</label><input type="text" id="bn_homeHouseNo" placeholder="e.g. 12"></div>
-                        <div class="form-group full-width"><label>Street Name *</label><input type="text" id="bn_homeStreet" placeholder="Street Name"></div>
+                        <div class="form-group"><label>State *</label><input type="text" id="bn_homeState"></div>
+                        <div class="form-group"><label>LGA *</label><input type="text" id="bn_homeLga"></div>
+                        <div class="form-group"><label>City/Town/Village *</label><input type="text" id="bn_homeCity"></div>
+                        <div class="form-group"><label>House Number *</label><input type="text" id="bn_homeHouseNo"></div>
+                        <div class="form-group full-width"><label>Street Name *</label><input type="text" id="bn_homeStreet"></div>
 
                         <div class="form-section-title">11. Your Business Address</div>
-                        <div class="form-group"><label>State *</label><input type="text" id="bn_busState" placeholder="State"></div>
-                        <div class="form-group"><label>LGA *</label><input type="text" id="bn_busLga" placeholder="LGA"></div>
-                        <div class="form-group"><label>City/Town/Village *</label><input type="text" id="bn_busCity" placeholder="City / Town / Village"></div>
-                        <div class="form-group"><label>House Number *</label><input type="text" id="bn_busHouseNo" placeholder="e.g. 14B"></div>
-                        <div class="form-group full-width"><label>Street Name *</label><input type="text" id="bn_busStreet" placeholder="Street Name"></div>
+                        <div class="form-group"><label>State *</label><input type="text" id="bn_busState"></div>
+                        <div class="form-group"><label>LGA *</label><input type="text" id="bn_busLga"></div>
+                        <div class="form-group"><label>City/Town/Village *</label><input type="text" id="bn_busCity"></div>
+                        <div class="form-group"><label>House Number *</label><input type="text" id="bn_busHouseNo"></div>
+                        <div class="form-group full-width"><label>Street Name *</label><input type="text" id="bn_busStreet"></div>
 
                         <div class="form-section-title">12. Nature of Business</div>
-                        <div class="form-group full-width"><label>Describe Nature of Business *</label><textarea id="bn_nature" rows="2" placeholder="State what your business does"></textarea></div>
+                        <div class="form-group full-width"><label>Describe Nature of Business *</label><textarea id="bn_nature" rows="2" placeholder="State clearly what your business will do"></textarea></div>
 
-                        <div class="form-section-title">Supporting Documents Submission Checklist</div>
+                        <div class="form-section-title">Supporting Documents Checklists</div>
                         <div class="form-group full-width">
-                            <div class="checkbox-group"><input type="checkbox" id="bn_chk1"><label for="bn_chk1" style="margin:0; cursor:pointer;">13. ID Card (Clearly snapped government issued ID ready)</label></div>
-                            <div class="checkbox-group"><input type="checkbox" id="bn_chk2"><label for="bn_chk2" style="margin:0; cursor:pointer;">14. Passport (Clearly snapped passport photo ready)</label></div>
-                            <div class="checkbox-group"><input type="checkbox" id="bn_chk3"><label for="bn_chk3" style="margin:0; cursor:pointer;">15. Signature (Clearly snapped signature on a plain white paper ready)</label></div>
+                            <div class="checkbox-group"><input type="checkbox" id="bn_chk1"><label for="bn_chk1" style="margin:0;">13. ID Card Attached (Clearly snapped government issued ID)</label></div>
+                            <div class="checkbox-group"><input type="checkbox" id="bn_chk2"><label for="bn_chk2" style="margin:0;">14. Passport Attached (Clearly snapped passport)</label></div>
+                            <div class="checkbox-group"><input type="checkbox" id="bn_chk3"><label for="bn_chk3" style="margin:0;">15. Signature Attached (Clearly snapped signature on a plain piece of paper)</label></div>
                         </div>
                     </div>
 
-                    <!-- LIMITED LIABILITY COMPANY (LTD) TRACK -->
+                    <!-- FORM 2 & 4: LIMITED LIABILITY COMPANY -->
                     <div id="section_company" class="form-grid" style="grid-column: span 2; display: none;">
-                        <div class="form-section-title">Company Structural Core Details</div>
-                        <div class="form-group"><label>1. State *</label><input type="text" id="co_state" placeholder="e.g., Lagos"></div>
-                        <div class="form-group"><label>2. LGA *</label><input type="text" id="co_lga" placeholder="e.g., Ikeja"></div>
-                        <div class="form-group"><label>3. City/Town/Village *</label><input type="text" id="co_city" placeholder="City / Town / Village"></div>
-                        <div class="form-group"><label>4. House Number *</label><input type="text" id="co_houseNo" placeholder="House Number"></div>
-                        <div class="form-group"><label>5. Street Name *</label><input type="text" id="co_street" placeholder="Street Name"></div>
-                        <div class="form-group"><label>8. Email Address *</label><input type="email" id="co_email" placeholder="company@example.com"></div>
-                        <div class="form-group full-width"><label>8b. Occupation *</label><input type="text" id="co_occupation" placeholder="Occupation / Line of Work"></div>
+                        <div class="form-section-title">Company Details</div>
+                        <div class="form-group"><label>1. State *</label><input type="text" id="co_state"></div>
+                        <div class="form-group"><label>2. LGA *</label><input type="text" id="co_lga"></div>
+                        <div class="form-group"><label>3. City/Town/Village *</label><input type="text" id="co_city"></div>
+                        <div class="form-group"><label>4. House Number *</label><input type="text" id="co_houseNo"></div>
+                        <div class="form-group"><label>5. Street Name *</label><input type="text" id="co_street"></div>
+                        <div class="form-group"><label>8. Email Address *</label><input type="email" id="co_email"></div>
+                        <div class="form-group full-width"><label>8b. Occupation *</label><input type="text" id="co_occupation"></div>
 
-                        <div class="form-section-title">Name Availability Search (Must end with LTD or LIMITED)</div>
-                        <div class="form-group"><label>9. Company Name 1 *</label><input type="text" id="co_name1" placeholder="Choice 1 (ends with LTD/LIMITED)"></div>
-                        <div class="form-group"><label>10. Company Name 2 *</label><input type="text" id="co_name2" placeholder="Choice 2 (ends with LTD/LIMITED)"></div>
+                        <div class="form-section-title">Preferred Company Names (Must end with LTD or LIMITED)</div>
+                        <div class="form-group"><label>9. Company Name 1 *</label><input type="text" id="co_name1" placeholder="Choice 1"></div>
+                        <div class="form-group"><label>10. Company Name 2 *</label><input type="text" id="co_name2" placeholder="Choice 2"></div>
 
-                        <div class="form-section-title">Object of Memorandum (State what company will do)</div>
+                        <div class="form-section-title">Object of Memorandum (What company will do)</div>
                         <div class="form-group full-width" style="display:grid; gap:10px;">
-                            <input type="text" id="co_obj1" placeholder="1. e.g., SALE AND SUPPLIES OF COMPUTER HARDWARE & SOFTWARE.">
-                            <input type="text" id="co_obj2" placeholder="2. e.g., REPAIRS AND MAINTENANCE OF COMPUTER HARDWARE & SOFTWARE.">
-                            <input type="text" id="co_obj3" placeholder="3. Option 3">
-                            <input type="text" id="co_obj4" placeholder="4. Option 4">
-                            <input type="text" id="co_obj5" placeholder="5. Option 5">
+                            <input type="text" id="co_obj1" placeholder="1. E.g. SALE AND SUPPLIES OF COMPUTER HARDWARE *">
+                            <input type="text" id="co_obj2" placeholder="2. E.g. REPAIRS AND MAINTENANCE OF COMPUTER HARDWARE">
+                            <input type="text" id="co_obj3" placeholder="3. Business Object Line 3">
+                            <input type="text" id="co_obj4" placeholder="4. Business Object Line 4">
+                            <input type="text" id="co_obj5" placeholder="5. Business Object Line 5">
                         </div>
 
-                        <div class="form-section-title">Director / Shareholder Information</div>
+                        <div class="form-section-title">Director / Shareholder Information (Form 4 Core)</div>
                         <div class="form-group"><label>1. Surname *</label><input type="text" id="co_dirSurname"></div>
                         <div class="form-group"><label>2. First Name *</label><input type="text" id="co_dirFirst"></div>
                         <div class="form-group"><label>3. Other Name</label><input type="text" id="co_dirMiddle"></div>
-                        <div class="form-group"><label>4. Date of Birth *</label><input type="text" id="co_dirDob" placeholder="YY/MM/DD"></div>
+                        <div class="form-group"><label>4. Date of Birth *</label><input type="date" id="co_dirDob"></div>
                         <div class="form-group"><label>5. Gender *</label><select id="co_dirGender"><option value="">-- Select --</option><option>Male</option><option>Female</option></select></div>
-                        <div class="form-group"><label>6. Nationality *</label><input type="text" id="co_dirNationality" placeholder="e.g. Nigerian"></div>
+                        <div class="form-group"><label>6. Nationality *</label><input type="text" id="co_dirNationality" value="Nigerian"></div>
                         <div class="form-group"><label>7. Phone Number *</label><input type="tel" id="co_dirPhone"></div>
                         <div class="form-group"><label>8. Email Address *</label><input type="email" id="co_dirEmail"></div>
                         <div class="form-group"><label>9. NIN *</label><input type="text" id="co_dirNin"></div>
@@ -1001,21 +992,21 @@
                         <div class="form-group"><label>City/Town/Village *</label><input type="text" id="co_dirCity"></div>
                         <div class="form-group"><label>House Number *</label><input type="text" id="co_dirHouseNo"></div>
                         <div class="form-group"><label>Street Name *</label><input type="text" id="co_dirStreet"></div>
-                        <div class="form-group"><label>8. Share Allotted *</label><input type="text" id="co_shares" placeholder="e.g. 1,000,000"></div>
+                        <div class="form-group full-width"><label>8. Share Allotted *</label><input type="text" id="co_shares" placeholder="e.g. 100% or 1,000,000 units"></div>
 
                         <div class="form-group full-width">
-                            <div class="checkbox-group"><input type="checkbox" id="co_chk1"><label for="co_chk1" style="margin:0; cursor:pointer;">6. ID Card (Clearly snapped government ID ready)</label></div>
-                            <div class="checkbox-group"><input type="checkbox" id="co_chk2"><label for="co_chk2" style="margin:0; cursor:pointer;">7. Signature (Clearly snapped signature on plain paper ready)</label></div>
+                            <div class="checkbox-group"><input type="checkbox" id="co_chk1"><label for="co_chk1" style="margin:0;">6. ID Card Attached (Clearly snapped government issued ID)</label></div>
+                            <div class="checkbox-group"><input type="checkbox" id="co_chk2"><label for="co_chk2" style="margin:0;">7. Signature Attached (Clearly snapped signature on a plain paper)</label></div>
                         </div>
 
                         <div class="form-section-title">Witness Information</div>
                         <div class="form-group"><label>1. Surname *</label><input type="text" id="co_witSurname"></div>
                         <div class="form-group"><label>2. First Name *</label><input type="text" id="co_witFirst"></div>
                         <div class="form-group"><label>3. Other Name</label><input type="text" id="co_witMiddle"></div>
-                        <div class="form-group"><label>4. Phone Number *</label><input type="tel" id="co_witPhone"></div>
+                        <div class="form-group"><label>4. Phone number *</label><input type="tel" id="co_witPhone"></div>
                         <div class="form-group"><label>5. Email *</label><input type="email" id="co_witEmail"></div>
                         <div class="form-group"><label>6. NIN *</label><input type="text" id="co_witNin"></div>
-                        <div class="form-group"><label>7. Date of Birth *</label><input type="text" id="co_witDob" placeholder="YY/MM/DD"></div>
+                        <div class="form-group"><label>7. Date of birth *</label><input type="date" id="co_witDob"></div>
 
                         <div class="form-section-title">Witness Home Address</div>
                         <div class="form-group"><label>1. State *</label><input type="text" id="co_witState"></div>
@@ -1024,122 +1015,122 @@
                         <div class="form-group"><label>4. House Number *</label><input type="text" id="co_witHouseNo"></div>
                         <div class="form-group"><label>5. Street Name *</label><input type="text" id="co_witStreet"></div>
 
+                        <div class="form-section-title">Witness Means of Identification</div>
                         <div class="form-group full-width">
-                            <div class="checkbox-group"><input type="checkbox" id="co_wit_chk1"><label for="co_wit_chk1" style="margin:0; cursor:pointer;">6. ID Card (Clearly snapped government ID ready)</label></div>
-                            <div class="checkbox-group"><input type="checkbox" id="co_wit_chk2"><label for="co_wit_chk2" style="margin:0; cursor:pointer;">7. Signature (Clearly snapped signature on plain paper ready)</label></div>
+                            <div class="checkbox-group"><input type="checkbox" id="co_wit_chk1"><label for="co_wit_chk1" style="margin:0;">6. ID Card Attached (Clearly snapped government issued ID)</label></div>
+                            <div class="checkbox-group"><input type="checkbox" id="co_wit_chk2"><label for="co_wit_chk2" style="margin:0;">7. Signature Attached (Clearly snapped signature on plain piece paper)</label></div>
                         </div>
                     </div>
 
-                    <!-- INCORPORATED TRUSTEE (NGO/CHURCH) TRACK -->
+                    <!-- FORM 3 & 5: INCORPORATED TRUSTEE (NGO/CHURCH) -->
                     <div id="section_church" class="form-grid" style="grid-column: span 2; display: none;">
-                        <div class="form-section-title">Trustees Information Profile</div>
-                        <div class="form-group"><label>1. Surname *</label><input type="text" id="tr_surname"></div>
-                        <div class="form-group"><label>2. First Name *</label><input type="text" id="tr_firstName"></div>
-                        <div class="form-group"><label>3. Other Names</label><input type="text" id="tr_otherName"></div>
-                        <div class="form-group"><label>4. Date of Birth *</label><input type="text" id="tr_dob" placeholder="YY/MM/DD"></div>
-                        <div class="form-group"><label>5. Gender *</label><select id="tr_gender"><option value="">-- Select --</option><option>Male</option><option>Female</option></select></div>
-                        <div class="form-group"><label>6. Nationality *</label><input type="text" id="tr_nationality" placeholder="e.g. Nigerian"></div>
-                        <div class="form-group"><label>7. Phone Number *</label><input type="tel" id="tr_phone"></div>
-                        <div class="form-group"><label>8. Email *</label><input type="email" id="tr_email"></div>
-                        <div class="form-group full-width"><label>9. Occupation/Description *</label><input type="text" id="tr_occupation"></div>
-
-                        <div class="form-section-title">Residential Address parameters</div>
-                        <div class="form-group"><label>16. Country *</label><input type="text" id="tr_country" value="Nigeria"></div>
-                        <div class="form-group"><label>17. State *</label><input type="text" id="tr_state"></div>
-                        <div class="form-group"><label>18. LGA *</label><input type="text" id="tr_lga"></div>
-                        <div class="form-group"><label>19. City/Town/Village *</label><input type="text" id="tr_city"></div>
-                        <div class="form-group"><label>20. House Number/Building *</label><input type="text" id="tr_houseNo"></div>
-                        <div class="form-group full-width"><label>21. Street Name *</label><input type="text" id="tr_street"></div>
-
-                        <div class="form-section-title">Means of Identification &amp; Portfolio Details</div>
-                        <div class="form-group"><label>22. ID Type (NIN preferred) *</label><input type="text" id="tr_idType" placeholder="e.g. NIN"></div>
-                        <div class="form-group"><label>23. ID Number *</label><input type="text" id="tr_idNum"></div>
-                        <div class="form-group full-width"><label>26. Portfolio *</label><select id="tr_portfolio"><option value="">-- Select Portfolio --</option><option>Chairman</option><option>Secretary</option><option>Treasurer</option><option>Member</option></select></div>
-
                         <div class="form-section-title">E. NGO Details for Name Reservation</div>
                         <div class="form-group"><label>Proposed Name 1 *</label><input type="text" id="tr_pName1"></div>
                         <div class="form-group"><label>Proposed Name 2 *</label><input type="text" id="tr_pName2"></div>
                         <div class="form-group"><label>Proposed Name 3 *</label><input type="text" id="tr_pName3"></div>
 
-                        <div class="form-section-title">Registered Office Address parameters</div>
+                        <div class="form-section-title">Registered Office Address</div>
                         <div class="form-group"><label>State *</label><input type="text" id="tr_offState"></div>
                         <div class="form-group"><label>LGA *</label><input type="text" id="tr_offLga"></div>
                         <div class="form-group"><label>City/Town/Village *</label><input type="text" id="tr_offCity"></div>
                         <div class="form-group"><label>House Number *</label><input type="text" id="tr_offHouseNo"></div>
-                        <div class="form-group full-width"><label>Street Name *</label><input type="text" id="tr_offStreet"></div>
-                        <div class="form-group full-width"><label>Official Email Address *</label><input type="email" id="tr_offEmail"></div>
+                        <div class="form-group"><label>Street Name *</label><input type="text" id="tr_offStreet"></div>
+                        <div class="form-group"><label>Official Email Address *</label><input type="email" id="tr_offEmail"></div>
 
-                        <div class="form-section-title">Aims and Objectives (Minimum 1 Required)</div>
+                        <div class="form-section-title">Aim and Objectives</div>
                         <div class="form-group full-width" style="display:grid; gap:10px;">
-                            <input type="text" id="tr_aim1" placeholder="1. Core Setup Objective *">
-                            <input type="text" id="tr_aim2" placeholder="2. Objective Option 2">
-                            <input type="text" id="tr_aim3" placeholder="3. Objective Option 3">
-                            <input type="text" id="tr_aim4" placeholder="4. Objective Option 4">
-                            <input type="text" id="tr_aim5" placeholder="5. Objective Option 5">
+                            <input type="text" id="tr_aim1" placeholder="1. Core Mandate Objective *">
+                            <input type="text" id="tr_aim2" placeholder="2. Mandate Object Two">
+                            <input type="text" id="tr_aim3" placeholder="3. Mandate Object Three">
+                            <input type="text" id="tr_aim4" placeholder="4. Mandate Object Four">
+                            <input type="text" id="tr_aim5" placeholder="5. Mandate Object Five">
                         </div>
 
-                        <div class="form-section-title">Upload Verification Checklist</div>
+                        <div class="form-section-title">Trustees Information (Form 5 Core)</div>
+                        <div class="form-group"><label>1. Surname *</label><input type="text" id="tr_surname"></div>
+                        <div class="form-group"><label>2. First Name *</label><input type="text" id="tr_firstName"></div>
+                        <div class="form-group"><label>3. Other Names</label><input type="text" id="tr_otherName"></div>
+                        <div class="form-group"><label>4. Date of Birth *</label><input type="date" id="tr_dob"></div>
+                        <div class="form-group"><label>5. Gender *</label><select id="tr_gender"><option value="">-- Select --</option><option>Male</option><option>Female</option></select></div>
+                        <div class="form-group"><label>6. Nationality *</label><input type="text" id="tr_nationality" value="Nigerian"></div>
+
+                        <div class="form-section-title">Contact Details</div>
+                        <div class="form-group"><label>7. Phone Number *</label><input type="tel" id="tr_phone"></div>
+                        <div class="form-group"><label>8. Email *</label><input type="email" id="tr_email"></div>
+                        <div class="form-group full-width"><label>9. Occupation/Description *</label><input type="text" id="tr_occupation"></div>
+
+                        <div class="form-section-title">Residential Address</div>
+                        <div class="form-group"><label>16. Country *</label><input type="text" id="tr_country" value="Nigeria"></div>
+                        <div class="form-group"><label>17. State *</label><input type="text" id="tr_state"></div>
+                        <div class="form-group"><label>18. LGA *</label><input type="text" id="tr_lga"></div>
+                        <div class="form-group"><label>19. City/Town/Village *</label><input type="text" id="tr_city"></div>
+                        <div class="form-group"><label>20: House Number/Building *</label><input type="text" id="tr_houseNo"></div>
+                        <div class="form-group full-width"><label>21. Street Name *</label><input type="text" id="tr_street"></div>
+
+                        <div class="form-section-title">Means of Identification / Portfolio</div>
+                        <div class="form-group"><label>22. ID Type (NIN Preferred) *</label><input type="text" id="tr_idType" value="NIN"></div>
+                        <div class="form-group"><label>23. ID Number *</label><input type="text" id="tr_idNum"></div>
+                        <div class="form-group full-width"><label>26: Portfolio (e.g. Chairman, Secretary, Treasurer Member) *</label><input type="text" id="tr_portfolio" placeholder="Chairman, Secretary, Treasurer etc."></div>
+
+                        <div class="form-section-title">Media Attachments Checks</div>
                         <div class="form-group full-width">
-                            <div class="checkbox-group"><input type="checkbox" id="tr_chk1"><label for="tr_chk1" style="margin:0; cursor:pointer;">24. Passport Verification (Snap neatly and send via WhatsApp)</label></div>
-                            <div class="checkbox-group"><input type="checkbox" id="tr_chk2"><label for="tr_chk2" style="margin:0; cursor:pointer;">25. Signature Specimen Verification (Snap on plain sheet and send)</label></div>
+                            <div class="checkbox-group"><input type="checkbox" id="tr_chk1"><label for="tr_chk1" style="margin:0;">24. Passport (Snap neatly and send)</label></div>
+                            <div class="checkbox-group"><input type="checkbox" id="tr_chk2"><label for="tr_chk2" style="margin:0;">25. Signature (Snap on plain sheet of paper and send)</label></div>
                         </div>
                     </div>
 
-                    <!-- NEWLY ADDED TRADEMARK REGISTRATION TRACK -->
-                    <div id="section_trademark" class="form-grid" style="grid-column: span 2; display: none;">
-                        <div class="form-section-title">Trademark Requirements Sheet</div>
-                        <div class="form-group"><label>Proposed Trademark Name *</label><input type="text" id="tm_name" placeholder="Trademark Name"></div>
-                        <div class="form-group"><label>Surname *</label><input type="text" id="tm_surname" placeholder="Surname"></div>
-                        <div class="form-group"><label>First Name *</label><input type="text" id="tm_firstname" placeholder="First Name"></div>
-                        <div class="form-group"><label>Middle Name</label><input type="text" id="tm_middlename" placeholder="Middle Name"></div>
-                        <div class="form-group full-width"><label>Business/Company Name *</label><input type="text" id="tm_bizName" placeholder="Registered Business or Corporate Entity name"></div>
-                        <div class="form-group full-width"><label>Business/Company Address *</label><textarea id="tm_address" rows="2" placeholder="Full operational corporate address layout"></textarea></div>
-                        <div class="form-group"><label>Class of Business *</label><input type="text" id="tm_class" placeholder="e.g. Class 35, Class 41"></div>
-                        <div class="form-group"><label>Phone Number *</label><input type="tel" id="tm_phone" placeholder="Phone Number"></div>
-                        <div class="form-group"><label>Email *</label><input type="email" id="tm_email" placeholder="email@domain.com"></div>
+                    <!-- FORM 6: SCUML CERTIFICATE REQUIREMENTS -->
+                    <div id="section_scuml" class="form-grid" style="grid-column: span 2; display: none;">
+                        <div class="form-section-title">SCUML Setup Form</div>
+                        <div class="form-group full-width"><label>1. Account Details (Name and Account Number) of Trustee or Business Owner *</label><input type="text" id="sc_account" placeholder="Bank Name, Account Name, Account Number"></div>
+                        <div class="form-group full-width"><label>2. BVN of the Trustee or Business Owner *</label><input type="text" id="sc_bvn" placeholder="11 Digits BVN Number"></div>
                         <div class="form-group full-width">
-                            <div class="checkbox-group"><input type="checkbox" id="tm_logoChk"><label for="tm_logoChk" style="margin:0; cursor:pointer;">Logo Image (If applicable, file image is ready to send via WhatsApp)</label></div>
+                            <div class="checkbox-group"><input type="checkbox" id="sc_docs"><label for="sc_docs" style="margin:0;">3. All CAC Documents Ready for Submission</label></div>
                         </div>
                     </div>
 
-                    <!-- STANDALONE NIN SLIP REPRINT SERVICE -->
-                    <div id="section_nin" class="form-grid" style="grid-column: span 2; display: none;">
-                        <div class="form-section-title">NIN Slip Reprint Data Sheet</div>
-                        <div class="form-group"><label>First Name *</label><input type="text" id="nin_fName" placeholder="First Name"></div>
-                        <div class="form-group"><label>Middle Name</label><input type="text" id="nin_mName" placeholder="Middle Name"></div>
-                        <div class="form-group"><label>Last Name *</label><input type="text" id="nin_lName" placeholder="Last Name / Surname"></div>
-                        <div class="form-group"><label>NIN Number</label><input type="text" id="nin_val" placeholder="11-digit NIN (if available)"></div>
-                        <div class="form-group full-width"><label>Date of Birth (Only fill if NIN is not available)</label><input type="date" id="nin_dob"></div>
+                    <!-- FORM 7: TAXPROMAX REQUIREMENTS -->
+                    <div id="section_taxpromax" class="form-grid" style="grid-column: span 2; display: none;">
+                        <div class="form-section-title">Taxpromax Operations Parameters</div>
+                        <div class="form-group"><label>RC/BN NUMBER *</label><input type="text" id="tp_rc"></div>
+                        <div class="form-group"><label>FIRS TIN NUMBER *</label><input type="text" id="tp_tin"></div>
+                        <div class="form-group full-width"><label>NATURE OF BUSINESS/LINE OF BUSINESS *</label><input type="text" id="tp_nature"></div>
+                        <div class="form-group"><label>COMPANY ADDRESS *</label><input type="text" id="tp_address"></div>
+                        <div class="form-group"><label>COMPANY PHONE NUMBER *</label><input type="tel" id="tp_phone"></div>
+                        <div class="form-group"><label>COMPANY EMAIL ADDRESS *</label><input type="email" id="tp_email"></div>
+                        <div class="form-group"><label>COMMENCEMENT DATE *</label><input type="date" id="tp_commence"></div>
+                        <div class="form-group"><label>ACCOUNTING YEAR END *</label><input type="text" id="tp_yearend" placeholder="e.g. December 31st"></div>
+                        <div class="form-group full-width"><label>NAME OF AUTHORIZED PERSON(S) *</label><input type="text" id="tp_rep"></div>
+                        <div class="form-group"><label>DIRECTOR EMAIL *</label><input type="email" id="tp_diremail"></div>
+                        <div class="form-group"><label>DIRECTOR PHONE NUMBER *</label><input type="tel" id="tp_dirphone"></div>
                     </div>
 
-                    <!-- STANDALONE INDIVIDUAL NEWSPAPER PUBLICATION -->
-                    <div id="section_indpub" class="form-grid" style="grid-column: span 2; display: none;">
-                        <div class="form-section-title">Individual Newspaper Publication Form</div>
-                        <div class="form-group"><label>Former Name (Include title) *</label><input type="text" id="ind_former" placeholder="e.g., Miss Jane Doe"></div>
-                        <div class="form-group"><label>New Name (Include title) *</label><input type="text" id="ind_new" placeholder="e.g., Mrs. Jane Smith"></div>
+                    <!-- FORM 8: FIRS TIN FAST TRACK -->
+                    <div id="section_firs" class="form-grid" style="grid-column: span 2; display: none;">
+                        <div class="form-section-title">FIRS Processing Desks</div>
+                        <div class="form-group full-width"><label>Company/Business Name *</label><input type="text" id="fi_name"></div>
+                        <div class="form-group"><label>Registration Number *</label><input type="text" id="fi_rc"></div>
+                        <div class="form-group"><label>State (As it is on CAC doc) *</label><input type="text" id="fi_state"></div>
+                        <div class="form-group full-width"><label>Local Government Area *</label><input type="text" id="fi_lga"></div>
                     </div>
 
-                    <!-- STANDALONE NGO NEWSPAPER PUBLICATION -->
-                    <div id="section_ngopub" class="form-grid" style="grid-column: span 2; display: none;">
-                        <div class="form-section-title">NGO Newspaper Publication Core Data</div>
-                        <div class="form-group full-width"><label>Name of NGO/Organization *</label><input type="text" id="ngo_pub_name" placeholder="Name of Organization"></div>
-                        
-                        <div class="form-section-title">TRUSTEES (List the names of the trustees below)</div>
-                        <div class="form-group full-width" style="display:grid; gap:10px;">
-                            <input type="text" id="ngo_t1" placeholder="1. Full Name of Trustee *">
-                            <input type="text" id="ngo_t2" placeholder="2. Full Name of Trustee">
-                            <input type="text" id="ngo_t3" placeholder="3. Full Name of Trustee">
-                            <input type="text" id="ngo_t4" placeholder="4. Full Name of Trustee">
-                            <input type="text" id="ngo_t5" placeholder="5. Full Name of Trustee">
-                        </div>
+                    <!-- FORM 9: NAME AVAILABILITY SEARCH -->
+                    <div id="section_search" class="form-grid" style="grid-column: span 2; display: none;">
+                        <div class="form-section-title">Name Availability Desk (Business Name &amp; Limited Liability Only)</div>
+                        <div class="form-group full-width"><label>Option 1 (Your most preferred Name) *</label><input type="text" id="se_opt1"></div>
+                        <div class="form-group full-width"><label>Option 2</label><input type="text" id="se_opt2"></div>
+                        <div class="form-group full-width"><label>Option 3</label><input type="text" id="se_opt3"></div>
+                    </div>
 
-                        <div class="form-section-title">AIMS AND OBJECTIVES</div>
-                        <div class="form-group full-width" style="display:grid; gap:10px;">
-                            <input type="text" id="ngo_aim1" placeholder="1. Core Aim/Objective *">
-                            <input type="text" id="ngo_aim2" placeholder="2. Aim/Objective">
-                            <input type="text" id="ngo_aim3" placeholder="3. Aim/Objective">
-                            <input type="text" id="ngo_aim4" placeholder="4. Aim/Objective">
-                            <input type="text" id="ngo_aim5" placeholder="5. Aim/Objective">
+                    <!-- FORM 10: TRUSTEE DECLARATION FORM -->
+                    <div id="section_trustee_dec" class="form-grid" style="grid-column: span 2; display: none;">
+                        <div class="form-section-title">Trustee Declaration Specifications</div>
+                        <div class="form-group full-width"><label>✅ Name of Organisation *</label><input type="text" id="td_org"></div>
+                        <div class="form-group full-width"><label>✅ Full name of Trustees (List below) *</label><textarea id="td_names" rows="3" placeholder="1. Name&#10;2. Name&#10;3. Name"></textarea></div>
+                        <div class="form-group full-width"><label>✅ RESIDENTIAL Address *</label><input type="text" id="td_address"></div>
+                        <div class="form-group full-width">
+                            <div class="checkbox-group"><input type="checkbox" id="td_sig"><label for="td_sig" style="margin:0;">Signature Attached (Snap neatly and send)</label></div>
+                            <div class="checkbox-group"><input type="checkbox" id="td_pass"><label for="td_pass" style="margin:0;">Passport Attached (Snap neatly and send)</label></div>
                         </div>
                     </div>
 
@@ -1147,40 +1138,14 @@
 
                 <div style="text-align: center; margin-top: 35px;">
                     <button onclick="processFilingIntake()" class="btn-cta" style="cursor: pointer; width: 100%; border: none;">
-                        Submit &amp; Open on WhatsApp <i class="fab fa-whatsapp"></i>
+                        Submit Info &amp; Open WhatsApp <i class="fab fa-whatsapp"></i>
                     </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="container">
-        <div class="faq-section">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <div class="faq-container">
-                <details style="background-color: var(--purple-card); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; margin-bottom: 15px; overflow: hidden; cursor: pointer;" onmouseover="this.style.borderColor='rgba(212, 175, 55, 0.3)'" onmouseout="this.style.borderColor='rgba(255, 255, 255, 0.05)'">
-                    <summary style="padding: 22px 30px; display: flex; justify-content: space-between; align-items: center; color: #ffffff; font-size: 1.05rem; font-weight: 600; list-style: none; outline: none;">
-                        <span>What is the difference between a Business Name and a Limited Liability Company (LTD)?</span>
-                        <i class="fas fa-chevron-down" style="color: var(--gold-accent);"></i>
-                    </summary>
-                    <div style="background-color: rgba(7, 9, 19, 0.4); padding: 0 30px 25px 30px; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-                        <p style="padding-top: 10px;">A Business Name is ideal for sole proprietors or small trades where the business owner and the business are seen as the same legal entity. A Limited Liability Company (LTD) treats the company as a completely separate legal entity, meaning your personal properties are fully protected if the business faces liabilities or debts.</p>
-                    </div>
-                </details>
-
-                <details style="background-color: var(--purple-card); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; margin-bottom: 15px; overflow: hidden; cursor: pointer;" onmouseover="this.style.borderColor='rgba(212, 175, 55, 0.3)'" onmouseout="this.style.borderColor='rgba(255, 255, 255, 0.05)'">
-                    <summary style="padding: 22px 30px; display: flex; justify-content: space-between; align-items: center; color: #ffffff; font-size: 1.05rem; font-weight: 600; list-style: none; outline: none;">
-                        <span>What documents do I need to provide for registration?</span>
-                        <i class="fas fa-chevron-down" style="color: var(--gold-accent);"></i>
-                    </summary>
-                    <div style="background-color: rgba(7, 9, 19, 0.4); padding: 0 30px 25px 30px; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-                        <p style="padding-top: 10px;">For a basic registration, you will only need to provide two proposed business names, your valid means of government identification (e.g., NIN, Voter's Card, International Passport, or Driver's License), your passport photograph, signature scan, and basic business details.</p>
-                    </div>
-                </details>
-            </div>
-        </div>
-    </section>
-
+    <!-- Proof Assets Grid layout -->
     <section class="proof-section container">
         <h3 class="section-title proof-title">Approved Registrations Proof</h3>
         <div class="proof-grid">
@@ -1193,11 +1158,11 @@
 
     <footer style="text-align: center; padding: 60px 20px 100px 20px; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.05);">
         <p>&copy; 2026 BASE DIGITAL GLOBAL CONSULTANCY LIMITED. ALL RIGHTS RESERVED.</p>
-        <p style="margin-top: 8px; font-weight: 500;">Designed with <i class="fas fa-heart" style="color: #e74c3c; margin: 0 3px;"></i> by <a href="https://visioreach.co" target="_blank" style="color: var(--gold-accent); text-decoration: none; font-weight: 700; transition: color 0.3s;">VisioReach Concepts</a></p>
+        <p style="margin-top: 8px; font-weight: 500;">Designed with <i class="fas fa-heart" style="color: #e74c3c; margin: 0 3px;"></i> by <a href="https://visioreach.co" target="_blank" style="color: var(--gold-accent); text-decoration: none; font-weight: 700;">VisioReach Concepts</a></p>
     </footer>
 
-    <a href="tel:+2348026281150" class="floating-call-btn" style="position: fixed; bottom: 30px; right: 30px; z-index: 1000; text-decoration: none;">
-        <div class="hexagon" style="width: 65px; height: 65px; background-color: var(--bg-space); border: 2px solid #e74c3c; display: flex; align-items: center; justify-content: center; border-radius: 18px; transform: rotate(45deg); box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);">
+    <a href="tel:+2348026281150" class="floating-call-btn">
+        <div style="width: 65px; height: 65px; background-color: var(--bg-space); border: 2px solid #e74c3c; display: flex; align-items: center; justify-content: center; border-radius: 18px; transform: rotate(45deg); box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);">
             <i class="fas fa-phone-alt" style="transform: rotate(-45deg); color: var(--green-accent); font-size: 1.6rem;"></i>
         </div>
     </a>
@@ -1212,10 +1177,11 @@
                 bname: document.getElementById('section_bname'),
                 company: document.getElementById('section_company'),
                 church: document.getElementById('section_church'),
-                trademark: document.getElementById('section_trademark'),
-                nin: document.getElementById('section_nin'),
-                indpub: document.getElementById('section_indpub'),
-                ngopub: document.getElementById('section_ngopub')
+                scuml: document.getElementById('section_scuml'),
+                taxpromax: document.getElementById('section_taxpromax'),
+                firs: document.getElementById('section_firs'),
+                search: document.getElementById('section_search'),
+                trustee_dec: document.getElementById('section_trustee_dec')
             };
 
             if (track === 'none') {
@@ -1229,11 +1195,11 @@
                 if(blocks[key]) blocks[key].style.display = 'none';
             }
 
-            // Hide package options for standalone specialized workflows
-            if (track === 'nin' || track === 'indpub' || track === 'ngopub' || track === 'trademark') {
-                tierWrapper.style.display = 'none';
-            } else {
+            // Manage package visibility criteria rules 
+            if (track === 'bname' || track === 'company' || track === 'church') {
                 tierWrapper.style.display = 'block';
+            } else {
+                tierWrapper.style.display = 'none';
             }
 
             if (blocks[track]) {
@@ -1244,7 +1210,7 @@
         function selectPackage(trackValue, tierValue) {
             document.getElementById('regType').value = trackValue;
             toggleRegistrationForm();
-            document.getElementById('packageTier').value = tierValue.split(' (')[0];
+            document.getElementById('packageTier').value = tierValue;
             
             const target = document.getElementById('intakeForm');
             if(target) {
@@ -1261,220 +1227,122 @@
                 alert("Please select your preferred package tier before submitting."); return;
             }
 
-            // ════════════════ BUSINESS NAME REGISTRATION ════════════════
+            // Form 1 Extraction
             if (track === 'bname') {
                 if (!document.getElementById('bn_chk1').checked || !document.getElementById('bn_chk2').checked || !document.getElementById('bn_chk3').checked) {
-                    alert("Please verify all supporting document checkboxes are acknowledged."); return;
+                    alert("Please verify all supporting document check boxes are selected."); return;
                 }
-                
                 const fields = ['bn_surname','bn_firstName','bn_otherName','bn_dob','bn_gender','bn_phone','bn_nin','bn_email','bn_occupation','bn_name1','bn_name2','bn_homeState','bn_homeLga','bn_homeCity','bn_homeHouseNo','bn_homeStreet','bn_busState','bn_busLga','bn_busCity','bn_busHouseNo','bn_busStreet','bn_nature'];
                 let d = {}; fields.forEach(f => d[f] = document.getElementById(f).value.trim());
 
                 if (!d.bn_surname || !d.bn_firstName || !d.bn_dob || !d.bn_gender || !d.bn_phone || !d.bn_nin || !d.bn_email || !d.bn_occupation || !d.bn_name1 || !d.bn_homeState || !d.bn_homeLga || !d.bn_homeCity || !d.bn_homeHouseNo || !d.bn_homeStreet || !d.bn_busState || !d.bn_busLga || !d.bn_busCity || !d.bn_busHouseNo || !d.bn_busStreet || !d.bn_nature) {
-                    alert("Please satisfy all mandatory parameters marked with *."); return;
+                    alert("Please fill out all required inputs."); return;
                 }
 
-                payloadText = `BUSINESS NAME REGISTRATION FORM\n` +
-                              `Package Tier: ${tier}\n\n` +
-                              `1. Surname: ${d.bn_surname}\n` +
-                              `2. First name: ${d.bn_firstName}\n` +
-                              `3. Other name: ${d.bn_otherName || 'N/A'}\n` +
-                              `4. Date of birth: ${d.bn_dob}\n` +
-                              `5. Gender: ${d.bn_gender}\n` +
-                              `6. Phone number: ${d.bn_phone}\n` +
-                              `7. NIN: ${d.bn_nin}\n` +
-                              `8. Functional Email address: ${d.bn_email}\n` +
-                              `8b. Occupation: ${d.bn_occupation}\n` +
-                              `9. Business Name 1: ${d.bn_name1}\n` +
-                              `   Business Name 2: ${d.bn_name2 || 'N/A'}\n\n` +
-                              `10. *YOUR HOME ADDRESS*\n` +
-                              `State: ${d.bn_homeState}\n` +
-                              `LGA: ${d.bn_homeLga}\n` +
-                              `City/Town/Village: ${d.bn_homeCity}\n` +
-                              `House Number: ${d.bn_homeHouseNo}\n` +
-                              `Street Name: ${d.bn_homeStreet}\n\n` +
-                              `11. *YOUR BUSINESS ADDRESS*\n` +
-                              `State: ${d.bn_busState}\n` +
-                              `LGA: ${d.bn_busLga}\n` +
-                              `City/Town/Village: ${d.bn_busCity}\n` +
-                              `House Number: ${d.bn_busHouseNo}\n` +
-                              `Street Name: ${d.bn_busStreet}\n\n` +
-                              `12. Nature of business: ${d.bn_nature}\n\n` +
-                              `*SUPPORTING DOCUMENTS*:\n` +
-                              `✔ 13. ID Card, 14. Passport, and 15. Specimen Signature are ready to transmit.`;
+                payloadText = `BUSINESS NAME REGISTRATION FORM (${tier})\n` +
+                              `1. Surname: ${d.bn_surname}\n2. First name: ${d.bn_firstName}\n3. Other name: ${d.bn_otherName || 'N/A'}\n4. Date of birth: ${d.bn_dob}\n5. Gender: ${d.bn_gender}\n6. Phone number: ${d.bn_phone}\n7. NIN: ${d.bn_nin}\n8. Functional Email address: ${d.bn_email}\n8b. Occupation: ${d.bn_occupation}\n9. Business Name 1: ${d.bn_name1}\nBusiness Name 2: ${d.bn_name2 || 'N/A'}\n\n10. YOUR HOME ADDRESS\nState: ${d.bn_homeState}\nLGA: ${d.bn_homeLga}\nCity/Town/Village: ${d.bn_homeCity}\nHouse Number: ${d.bn_homeHouseNo}\nStreet Name: ${d.bn_homeStreet}\n\n11. YOUR BUSINESS ADDRESS\nState: ${d.bn_busState}\nLGA: ${d.bn_busLga}\nCity/Town/Village: ${d.bn_busCity}\nHouse Number: ${d.bn_busHouseNo}\nStreet Name: ${d.bn_busStreet}\n\n12. Nature of business: ${d.bn_nature}\n\nSUPPORTING DOCUMENTS:\n✔ ID Card Attached\n✔ Passport Attached\n✔ Signature Attached`;
             }
 
-            // ════════════════ COMPANY (LTD) ════════════════
+            // Form 2 Extraction
             else if (track === 'company') {
                 if (!document.getElementById('co_chk1').checked || !document.getElementById('co_chk2').checked || !document.getElementById('co_wit_chk1').checked || !document.getElementById('co_wit_chk2').checked) {
-                    alert("Please verify all supporting verification checklists for Directors and Witnesses are checked."); return;
+                    alert("Please verify all identity checklist selections are complete."); return;
                 }
-
-                const fields = [
-                    'co_state','co_lga','co_city','co_houseNo','co_street','co_email','co_occupation','co_name1','co_name2',
-                    'co_dirSurname','co_dirFirst','co_dirMiddle','co_dirDob','co_dirGender','co_dirNationality','co_dirPhone','co_dirEmail','co_dirNin',
-                    'co_dirState','co_dirLga','co_dirCity','co_dirHouseNo','co_dirStreet','co_shares',
-                    'co_witSurname','co_witFirst','co_witMiddle','co_witPhone','co_witEmail','co_witNin','co_witDob',
-                    'co_witState','co_witLga','co_witCity','co_witHouseNo','co_witStreet'
-                ];
+                const fields = ['co_state','co_lga','co_city','co_houseNo','co_street','co_email','co_occupation','co_name1','co_name2','co_dirSurname','co_dirFirst','co_dirMiddle','co_dirDob','co_dirGender','co_dirNationality','co_dirPhone','co_dirEmail','co_dirNin','co_dirState','co_dirLga','co_dirCity','co_dirHouseNo','co_dirStreet','co_shares','co_witSurname','co_witFirst','co_witMiddle','co_witPhone','co_witEmail','co_witNin','co_witDob','co_witState','co_witLga','co_witCity','co_witHouseNo','co_witStreet'];
                 let d = {}; fields.forEach(f => d[f] = document.getElementById(f).value.trim());
 
-                if (!d.co_state || !d.co_lga || !d.co_city || !d.co_houseNo || !d.co_street || !d.co_email || !d.co_occupation || !d.co_name1 || !d.co_name2 ||
-                    !d.co_dirSurname || !d.co_dirFirst || !d.co_dirDob || !d.co_dirGender || !d.co_dirNationality || !d.co_dirPhone || !d.co_dirEmail || !d.co_dirNin ||
-                    !d.co_dirState || !d.co_dirLga || !d.co_dirCity || !d.co_dirHouseNo || !d.co_dirStreet || !d.co_shares ||
-                    !d.co_witSurname || !d.co_witFirst || !d.co_witPhone || !d.co_witEmail || !d.co_witNin || !d.co_witDob ||
-                    !d.co_witState || !d.co_witLga || !d.co_witCity || !d.co_witHouseNo || !d.co_witStreet) {
-                    alert("Please completely satisfy all mandatory fields for company structural parameters."); return;
-                }
-
-                // Strictly validate name format rule
-                const n1 = d.co_name1.toUpperCase();
-                const n2 = d.co_name2.toUpperCase();
-                if (!(n1.endsWith("LTD") || n1.endsWith("LIMITED")) || !(n2.endsWith("LTD") || n2.endsWith("LIMITED"))) {
-                    alert("Company Name choices MUST explicitly end with 'LTD' or 'LIMITED'."); return;
+                if (!d.co_state || !d.co_lga || !d.co_city || !d.co_houseNo || !d.co_street || !d.co_email || !d.co_occupation || !d.co_name1 || !d.co_name2 || !d.co_dirSurname || !d.co_dirFirst || !d.co_dirDob || !d.co_dirGender || !d.co_dirNationality || !d.co_dirPhone || !d.co_dirEmail || !d.co_dirNin || !d.co_dirState || !d.co_dirLga || !d.co_dirCity || !d.co_dirHouseNo || !d.co_dirStreet || !d.co_shares || !d.co_witSurname || !d.co_witFirst || !d.co_witPhone || !d.co_witEmail || !d.co_witNin || !d.co_witDob || !d.co_witState || !d.co_witLga || !d.co_witCity || !d.co_witHouseNo || !d.co_witStreet) {
+                    alert("Please complete all tracking operational entries."); return;
                 }
 
                 let objects = [];
                 for (let i = 1; i <= 5; i++) {
                     let val = document.getElementById(`co_obj${i}`).value.trim();
-                    if(val) objects.push(`${i}. ${val.toUpperCase()}`);
-                }
-                if(objects.length === 0) {
-                    alert("Please provide at least line 1 item inside the Object of Memorandum template layout."); return;
+                    if(val) objects.push(`${i}. ${val}`);
                 }
 
-                payloadText = `LIMITED LIABILITY COMPANY REGISTRATION FORM\n` +
-                              `Package Tier: ${tier}\n\n` +
-                              `*COMPANY DETAILS*\n` +
-                              `1. State: ${d.co_state}\n2. LGA: ${d.co_lga}\n3. City/Town/Village: ${d.co_city}\n4. House Number: ${d.co_houseNo}\n5. Street Name: ${d.co_street}\n8. Email address: ${d.co_email}\n8b. Occupation: ${d.co_occupation}\n` +
-                              `9. Company Name 1: ${d.co_name1}\n10. Company Name 2: ${d.co_name2}\n\n` +
-                              `*OBJECT OF MEMORANDUM*\n${objects.join('\n')}\n\n` +
-                              `*DIRECTOR/SHAREHOLDER PERSONAL DETAILS*\n` +
-                              `1. Surname: ${d.co_dirSurname}\n2. First Name: ${d.co_dirFirst}\n3. Other Name: ${d.co_dirMiddle || 'N/A'}\n4. Date of Birth: ${d.co_dirDob}\n5. Gender: ${d.co_dirGender}\n6. Nationality: ${d.co_dirNationality}\n7. Phone Number: ${d.co_dirPhone}\n8. Email address: ${d.co_dirEmail}\n9. NIN: ${d.co_dirNin}\n\n` +
-                              `*DIRECTOR/SHAREHOLDER HOME ADDRESS*\n` +
-                              `State: ${d.co_dirState}\nLGA: ${d.co_dirLga}\nCity: ${d.co_dirCity}\nHouse No: ${d.co_dirHouseNo}\nStreet: ${d.co_dirStreet}\n8. Share Allotted: ${d.co_shares}\n✔ ID Card & Signature Attached\n\n` +
-                              `*WITNESS INFORMATION*\n` +
-                              `1. Surname: ${d.co_witSurname}\n2. First Name: ${d.co_witFirst}\n3. Other Name: ${d.co_witMiddle || 'N/A'}\n4. Phone number: ${d.co_witPhone}\n5. Email: ${d.co_witEmail}\n6. NIN: ${d.co_witNin}\n7. Date of birth: ${d.co_witDob}\n\n` +
-                              `*WITNESS HOME ADDRESS*\n` +
-                              `State: ${d.co_witState}\nLGA: ${d.co_witLga}\nCity: ${d.co_witCity}\nHouse No: ${d.co_witHouseNo}\nStreet: ${d.co_witStreet}\n✔ Witness ID Card & Signature Attached`;
+                payloadText = `LIMITED LIABILITY COMPANY REGISTRATION FORM (${tier})\n` +
+                              `COMPANY DETAILS\n1. State: ${d.co_state}\n2. LGA: ${d.co_lga}\n3. City/Town/Village: ${d.co_city}\n4. House Number: ${d.co_houseNo}\n5. Street Name: ${d.co_street}\n8. Email address: ${d.co_email}\n8b. Occupation: ${d.co_occupation}\n9. Company Name 1: ${d.co_name1}\n10. Company Name 2: ${d.co_name2}\n\nOBJECT OF MEMORANDUM:\n${objects.join('\n')}\n\nDIRECTOR/SHAREHOLDER INFORMATION\n1. Surname: ${d.co_dirSurname}\n2. First Name: ${d.co_dirFirst}\n3. Other Name: ${d.co_dirMiddle || 'N/A'}\n4. Date of Birth: ${d.co_dirDob}\n5. Gender: ${d.co_dirGender}\n6. Nationality: ${d.co_dirNationality}\n7. Phone Number: ${d.co_dirPhone}\n8. Email address: ${d.co_dirEmail}\n9. NIN: ${d.co_dirNin}\n\nHOME ADDRESS\nState: ${d.co_dirState}\nLGA: ${d.co_dirLga}\nCity/Town/Village: ${d.co_dirCity}\nHouse Number: ${d.co_dirHouseNo}\nStreet Name: ${d.co_dirStreet}\n✔ ID Card Attached\n✔ Signature Attached\n8. Share allotted: ${d.co_shares}\n\nWITNESS INFORMATION\n1. Surname: ${d.co_witSurname}\n2. First Name: ${d.co_witFirst}\n3. Other Name: ${d.co_witMiddle || 'N/A'}\n4. Phone number: ${d.co_witPhone}\n5. Email: ${d.co_witEmail}\n6. NIN: ${d.co_witNin}\n7. Date of birth: ${d.co_witDob}\n\nWITNESS HOME ADDRESS\nState: ${d.co_witState}\nLGA: ${d.co_witLga}\nCity/Town/Village: ${d.co_witCity}\nHouse Number: ${d.co_witHouseNo}\nStreet Name: ${d.co_witStreet}\n✔ Witness ID Attached\n✔ Witness Signature Attached`;
             }
 
-            // ════════════════ INCORPORATED TRUSTEE (NGO/CHURCH) TRACK ════════════════
+            // Form 3 Extraction
             else if (track === 'church') {
                 if (!document.getElementById('tr_chk1').checked || !document.getElementById('tr_chk2').checked) {
-                    alert("Please verify all supporting verification checklists for Trustees are checked."); return;
+                    alert("Please acknowledge mandatory trustee verification photo checklists."); return;
                 }
-
-                const fields = [
-                    'tr_surname','tr_firstName','tr_otherName','tr_dob','tr_gender','tr_nationality','tr_phone','tr_email','tr_occupation',
-                    'tr_country','tr_state','tr_lga','tr_city','tr_houseNo','tr_street','tr_idType','tr_idNum','tr_portfolio',
-                    'tr_pName1','tr_pName2','tr_pName3','tr_offState','tr_offLga','tr_offCity','tr_offHouseNo','tr_offStreet','tr_offEmail'
-                ];
+                const fields = ['tr_surname','tr_firstName','tr_otherName','tr_dob','tr_gender','tr_nationality','tr_phone','tr_email','tr_occupation','tr_country','tr_state','tr_lga','tr_city','tr_houseNo','tr_street','tr_idType','tr_idNum','tr_portfolio','tr_pName1','tr_pName2','tr_pName3','tr_offState','tr_offLga','tr_offCity','tr_offHouseNo','tr_offStreet','tr_offEmail'];
                 let d = {}; fields.forEach(f => d[f] = document.getElementById(f).value.trim());
 
-                if (!d.tr_surname || !d.tr_firstName || !d.tr_dob || !d.tr_gender || !d.tr_nationality || !d.tr_phone || !d.tr_email || !d.tr_occupation ||
-                    !d.tr_country || !d.tr_state || !d.tr_lga || !d.tr_city || !d.tr_houseNo || !d.tr_street || !d.tr_idType || !d.tr_idNum || !d.tr_portfolio ||
-                    !d.tr_pName1 || !d.tr_pName2 || !d.tr_pName3 || !d.tr_offState || !d.tr_offLga || !d.tr_offCity || !d.tr_offHouseNo || !d.tr_offStreet || !d.tr_offEmail) {
-                    alert("Please completely satisfy all fields required for Incorporated Trustee structural layouts."); return;
+                if (!d.tr_surname || !d.tr_firstName || !d.tr_dob || !d.tr_gender || !d.tr_nationality || !d.tr_phone || !d.tr_email || !d.tr_occupation || !d.tr_country || !d.tr_state || !d.tr_lga || !d.tr_city || !d.tr_houseNo || !d.tr_street || !d.tr_idType || !d.tr_idNum || !d.tr_portfolio || !d.tr_pName1 || !d.tr_offState || !d.tr_offLga || !d.tr_offCity || !d.tr_offStreet || !d.tr_offEmail) {
+                    alert("Please fill in all layout core configurations for Incorporated Trustees."); return;
                 }
 
                 let aims = [];
-                for(let i = 1; i <= 5; i++) {
+                for(let i=1; i<=5; i++){
                     let val = document.getElementById(`tr_aim${i}`).value.trim();
                     if(val) aims.push(`${i}. ${val}`);
                 }
-                if(aims.length === 0) {
-                    alert("Please define at least one primary core Aim and Objective context metric."); return;
-                }
 
-                payloadText = `INCORPORATED TRUSTEE REGISTRATION FORM\n` +
-                              `Package Tier: ${tier}\n\n` +
-                              `*TRUSTEES INFORMATION*\n` +
-                              `1. Surname: ${d.tr_surname}\n2. First Name: ${d.tr_firstName}\n3. Other Names: ${d.tr_otherName || 'N/A'}\n4. Date of Birth: ${d.tr_dob}\n5. Gender: ${d.tr_gender}\n6. Nationality: ${d.tr_nationality}\n` +
-                              `Contact Details\n7. Phone Number: ${d.tr_phone}\n8. Email: ${d.tr_email}\n9. Occupation/Description: ${d.tr_occupation}\n\n` +
-                              `*RESIDENTIAL ADDRESS*\n` +
-                              `16. Country: ${d.tr_country}\n17. State: ${d.tr_state}\n18. LGA: ${d.tr_lga}\n19. City/Town/Village: ${d.tr_city}\n20. House Number/Building: ${d.tr_houseNo}\n21. Street Name: ${d.tr_street}\n\n` +
-                              `*MEANS OF IDENTIFICATION/ PORTFOLIO*\n` +
-                              `22. ID Type: ${d.tr_idType}\n23. ID Number: ${d.tr_idNum}\n26. Portfolio: ${d.tr_portfolio}\n✔ 24. Passport & 25. Signature layout maps ready.\n\n` +
-                              `*E. NGO DETAILS FOR NAME RESERVATION*\n` +
-                              `Proposed Name 1: ${d.tr_pName1}\nProposed Name 2: ${d.tr_pName2}\nProposed Name 3: ${d.tr_pName3}\n\n` +
-                              `*REGISTERED OFFICE ADDRESS*\n` +
-                              `State: ${d.tr_offState}\nLGA: ${d.tr_offLga}\nCity/Town/Village: ${d.tr_offCity}\nHouse Number: ${d.tr_offHouseNo}\nStreet Name: ${d.tr_offStreet}\nOfficial email address: ${d.tr_offEmail}\n\n` +
-                              `*AIM AND OBJECTIVES*\n${aims.join('\n')}`;
+                payloadText = `INCORPORATED TRUSTEE REGISTRATION FORM (${tier})\n` +
+                              `TRUSTEES INFORMATION\n1. Surname: ${d.tr_surname}\n2. First Name: ${d.tr_firstName}\n3. Other Names: ${d.tr_otherName || 'N/A'}\n4. Date of Birth: ${d.tr_dob}\n5. Gender: ${d.tr_gender}\n6. Nationality: ${d.tr_nationality}\n\nContact Details\n7. Phone Number: ${d.tr_phone}\n8. Email: ${d.tr_email}\n9. Occupation/Description: ${d.tr_occupation}\n\nResidential Address\n16. Country: ${d.tr_country}\n17. State: ${d.tr_state}\n18. LGA: ${d.tr_lga}\n19. City/Town/Village: ${d.tr_city}\n20: House Number/Building: ${d.tr_houseNo}\n21. Street Name: ${d.tr_street}\n\nMeans of Identification/ portfolio\n22. ID Type: ${d.tr_idType}\n23. ID Number: ${d.tr_idNum}\n✔ Passport Attached\n✔ Signature Attached\n26: Portfolio: ${d.tr_portfolio}\n\nE. NGO DETAILS FOR NAME RESERVATION\nProposed Name 1: ${d.tr_pName1}\nProposed Name 2: ${d.tr_pName2 || 'N/A'}\nProposed Name 3: ${d.tr_pName3 || 'N/A'}\n\nREGISTERED OFFICE ADDRESS:\nState: ${d.tr_offState}\nLGA: ${d.tr_offLga}\nCity/Town/Village: ${d.tr_offCity}\nHouse Number: ${d.tr_offHouseNo}\nStreet Name: ${d.tr_offStreet}\nOfficial email address: ${d.tr_offEmail}\n\nAIM AND OBJECTIVES:\n${aims.join('\n')}`;
             }
 
-            // ════════════════ TRADEMARK REQUIREMENT ════════════════
-            else if (track === 'trademark') {
-                const fields = ['tm_name','tm_surname','tm_firstname','tm_middlename','tm_bizName','tm_address','tm_class','tm_phone','tm_email'];
+            // Form 6 Extraction
+            else if (track === 'scuml') {
+                const acc = document.getElementById('sc_account').value.trim();
+                const bvn = document.getElementById('sc_bvn').value.trim();
+                if (!document.getElementById('sc_docs').checked || !acc || !bvn) {
+                    alert("Please satisfy all SCUML processing constraints."); return;
+                }
+                payloadText = `SCUML CERTIFICATE REQUIREMENTS\n1. Account details: ${acc}\n2. BVN: ${bvn}\n✔ 3. All CAC documents ready`;
+            }
+
+            // Form 7 Extraction
+            else if (track === 'taxpromax') {
+                const fields = ['tp_rc','tp_tin','tp_nature','tp_address','tp_phone','tp_email','tp_commence','tp_yearend','tp_rep','tp_diremail','tp_dirphone'];
                 let d = {}; fields.forEach(f => d[f] = document.getElementById(f).value.trim());
 
-                if (!d.tm_name || !d.tm_surname || !d.tm_firstname || !d.tm_bizName || !d.tm_address || !d.tm_class || !d.tm_phone || !d.tm_email) {
-                    alert("Please provide all required core values for the Trademark application."); return;
+                if (!d.tp_rc || !d.tp_tin || !d.tp_nature || !d.tp_address || !d.tp_phone || !d.tp_email || !d.tp_commence || !d.tp_yearend || !d.tp_rep || !d.tp_diremail || !d.tp_dirphone) {
+                    alert("Please check that all TAXPROMAX inputs are complete."); return;
                 }
 
-                const logoSent = document.getElementById('tm_logoChk').checked ? "Provided (Ready on WhatsApp)" : "Not Applicable / Plain Text Name Only";
-
-                payloadText = `*TRADEMARK REQUIREMENT*\n\n` +
-                              `Proposed Trademark Name : ${d.tm_name}\n` +
-                              `Surname: ${d.tm_surname}\n` +
-                              `First Name: ${d.tm_firstname}\n` +
-                              `Middle Name: ${d.tm_middlename || 'N/A'}\n` +
-                              `Business/Company Address: ${d.tm_address}\n` +
-                              `Class of Business: ${d.tm_class}\n` +
-                              `Phone Number: ${d.tm_phone}\n` +
-                              `Business/Company Name: ${d.tm_bizName}\n` +
-                              `Email: ${d.tm_email}\n` +
-                              `Logo: ${logoSent}`;
+                payloadText = `TAXPROMAX REQUIREMENTS\nRC/BN NUMBER: ${d.tp_rc}\nFIRS TIN NUMBER: ${d.tp_tin}\nNATURE OF BUSINESS/LINE OF BUSINESS: ${d.tp_nature}\nCOMPANY ADDRESS: ${d.tp_address}\nCOMPANY PHONE NUMBER: ${d.tp_phone}\nCOMPANY EMAIL ADDRESS: ${d.tp_email}\nCOMMENCEMENT DATE: ${d.tp_commence}\nACCOUNTING YEAR END: ${d.tp_yearend}\nNAME OF AUTHORIZED PERSON(S): ${d.tp_rep}\nDIRECTOR EMAIL: ${d.tp_diremail}\nDIRECTOR PHONE NUMBER: ${d.tp_dirphone}`;
             }
 
-            // ════════════════ STANDALONE NIN REPRINT ════════════════
-            else if (track === 'nin') {
-                const fName = document.getElementById('nin_fName').value.trim();
-                const mName = document.getElementById('nin_mName').value.trim();
-                const lName = document.getElementById('nin_lName').value.trim();
-                const ninVal = document.getElementById('nin_val').value.trim();
-                const dob = document.getElementById('nin_dob').value.trim();
+            // Form 8 Extraction
+            else if (track === 'firs') {
+                const name = document.getElementById('fi_name').value.trim();
+                const rc = document.getElementById('fi_rc').value.trim();
+                const state = document.getElementById('fi_state').value.trim();
+                const lga = document.getElementById('fi_lga').value.trim();
 
-                if (!fName || !lName) {
-                    alert("Please fill out at least First Name and Last Name."); return;
-                }
+                if (!name || !rc || !state || !lga) { alert("Please complete all FIRS fields."); return; }
 
-                payloadText = `Hello Base Digital,\n\nI need an operational *NIN SLIP REPRINT* service.\n\n` +
-                              `• First Name: ${fName}\n• Middle Name: ${mName || 'N/A'}\n• Last Name: ${lName}\n` +
-                              `• NIN: ${ninVal || 'N/A'}\n• Date of Birth: ${dob || 'N/A'}`;
+                payloadText = `FIRS TIN FAST TRACK\nCompany/Business Name: ${name}\nRegistration Number: ${rc}\nState: ${state}\nLocal Government Area: ${lga}`;
             }
 
-            // ════════════════ INDIVIDUAL NEWSPAPER PUBLICATION ════════════════
-            else if (track === 'indpub') {
-                const former = document.getElementById('ind_former').value.trim();
-                const newName = document.getElementById('ind_new').value.trim();
+            // Form 9 Extraction
+            else if (track === 'search') {
+                const opt1 = document.getElementById('se_opt1').value.trim();
+                const opt2 = document.getElementById('se_opt2').value.trim();
+                const opt3 = document.getElementById('se_opt3').value.trim();
 
-                if (!former || !newName) { alert("Please input both fields."); return; }
+                if (!opt1) { alert("Please supply Choice Name Option 1."); return; }
 
-                payloadText = `Hello Base Digital,\n\nI want to request an *INDIVIDUAL NEWSPAPER PUBLICATION*.\n\n` +
-                              `• Former Name: ${former}\n• New Name: ${newName}`;
+                payloadText = `Name Availability Search\nOption 1: ${opt1}\nOption 2: ${opt2 || 'N/A'}\nOption 3: ${opt3 || 'N/A'}`;
             }
 
-            // ════════════════ NGO NEWSPAPER PUBLICATION ════════════════
-            else if (track === 'ngopub') {
-                const orgName = document.getElementById('ngo_pub_name').value.trim();
-                if (!orgName) { alert("Please provide the organization name."); return; }
+            // Form 10 Extraction
+            else if (track === 'trustee_dec') {
+                const org = document.getElementById('td_org').value.trim();
+                const names = document.getElementById('td_names').value.trim();
+                const addr = document.getElementById('td_address').value.trim();
 
-                let trustees = [];
-                for (let i = 1; i <= 5; i++) {
-                    let val = document.getElementById(`ngo_t${i}`).value.trim();
-                    if(val) trustees.push(`${i}. ${val}`);
-                }
-                let aims = [];
-                for (let i = 1; i <= 5; i++) {
-                    let val = document.getElementById(`ngo_aim${i}`).value.trim();
-                    if(val) aims.push(`${i}. ${val}`);
+                if (!org || !names || !addr || !document.getElementById('td_sig').checked || !document.getElementById('td_pass').checked) {
+                    alert("Please satisfy all declaration operational details."); return;
                 }
 
-                payloadText = `Hello Base Digital,\n\nI want to request an *NGO NEWSPAPER PUBLICATION*.\n\n` +
-                              `• *ORGANIZATION NAME*: ${orgName}\n\n` +
-                              `*TRUSTEES LIST*:\n${trustees.join('\n') || 'N/A'}\n\n` +
-                              `*AIMS AND OBJECTIVES*:\n${aims.join('\n') || 'N/A'}`;
+                payloadText = `TRUSTEE DECLARATION FORM:\n✅ Name of Organisation : ${org}\n✅ Full name of Trustee :\n${names}\n✅ RESIDENTIAL Address: ${addr}\n✔ Signature Attached\n✔ Passport Attached`;
             }
 
             const url = "https://wa.me/2348026281150?text=" + encodeURIComponent(payloadText);

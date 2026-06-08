@@ -701,6 +701,18 @@
                 </div>
                 <button class="btn-select-pack" onclick="selectPackage('bname', 'Premium Package')">Choose Premium</button>
             </div>
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3>Executive Package</h3>
+                    <div class="pricing-price">₦220,000</div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-plus-circle"></i> Includes everything in Premium, plus:</li>
+                        <li><i class="fas fa-check-circle"></i> Trademark Registration</li>
+                        <li><i class="fas fa-check-circle"></i> Delivery of hard copies of your documents</li>
+                    </ul>
+                </div>
+                <button class="btn-select-pack" onclick="selectPackage('bname', 'Executive Package')">Choose Executive</button>
+            </div>
         </div>
 
         <!-- Category: Companies -->
@@ -745,6 +757,19 @@
                     </ul>
                 </div>
                 <button class="btn-select-pack" onclick="selectPackage('company', 'Premium Package')">Choose Premium</button>
+            </div>
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3>Executive Package</h3>
+                    <div class="pricing-price">₦250,000</div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-plus-circle"></i> Includes everything in Premium, plus:</li>
+                        <li><i class="fas fa-check-circle"></i> Trademark Registration</li>
+                        <li><i class="fas fa-check-circle"></i> Annual return reminders</li>
+                        <li><i class="fas fa-check-circle"></i> Delivery of hard copies of your documents</li>
+                    </ul>
+                </div>
+                <button class="btn-select-pack" onclick="selectPackage('company', 'Executive Package')">Choose Executive</button>
             </div>
         </div>
 
@@ -893,6 +918,9 @@
                         <option value="firs">8. FIRS TIN Fast Track</option>
                         <option value="search">9. Name Availability Search</option>
                         <option value="trustee_dec">10. Trustee Declaration Form</option>
+                        <option value="ngo_news">11. NGO Newspaper Publication</option>
+                        <option value="indiv_news">12. Individual Newspaper Publication</option>
+                        <option value="nin_slip">13. NIN Slip Reprint</option>
                     </select>
                 </div>
                 <div id="tierWrapper" style="display: none;">
@@ -902,6 +930,7 @@
                         <option value="Basic Package">Basic Package</option>
                         <option value="Standard Package">Standard Package</option>
                         <option value="Premium Package">Premium Package</option>
+                        <option value="Executive Package">Executive Package</option>
                     </select>
                 </div>
             </div>
@@ -1134,6 +1163,30 @@
                         </div>
                     </div>
 
+                    <!-- FORM 11: NGO NEWSPAPER PUBLICATION -->
+                    <div id="section_ngo_news" class="form-grid" style="grid-column: span 2; display: none;">
+                        <div class="form-section-title">NGO Newspaper Publication</div>
+                        <div class="form-group full-width"><label>Trustees (List names below) *</label><textarea id="ng_trustees" rows="4" placeholder="1. Name&#10;2. Name&#10;3. Name&#10;4. Name&#10;5. Name"></textarea></div>
+                        <div class="form-group full-width"><label>Aims and Objectives *</label><textarea id="ng_aims" rows="4" placeholder="1. Aim 1&#10;2. Aim 2&#10;3. Aim 3&#10;4. Aim 4&#10;5. Aim 5"></textarea></div>
+                    </div>
+
+                    <!-- FORM 12: INDIVIDUAL NEWSPAPER PUBLICATION -->
+                    <div id="section_indiv_news" class="form-grid" style="grid-column: span 2; display: none;">
+                        <div class="form-section-title">Individual Newspaper Publication</div>
+                        <div class="form-group full-width"><label>Former Name (Include title) *</label><input type="text" id="in_former"></div>
+                        <div class="form-group full-width"><label>New Name (Include title) *</label><input type="text" id="in_new"></div>
+                    </div>
+
+                    <!-- FORM 13: NIN SLIP REPRINT -->
+                    <div id="section_nin_slip" class="form-grid" style="grid-column: span 2; display: none;">
+                        <div class="form-section-title">NIN Slip Reprint</div>
+                        <div class="form-group"><label>First Name *</label><input type="text" id="ni_first"></div>
+                        <div class="form-group"><label>Middle Name</label><input type="text" id="ni_middle"></div>
+                        <div class="form-group"><label>Last Name *</label><input type="text" id="ni_last"></div>
+                        <div class="form-group"><label>NIN *</label><input type="text" id="ni_number"></div>
+                        <div class="form-group full-width"><label>Date of Birth (only fill if NIN is not available)</label><input type="date" id="ni_dob"></div>
+                    </div>
+
                 </div>
 
                 <div style="text-align: center; margin-top: 35px;">
@@ -1181,7 +1234,10 @@
                 taxpromax: document.getElementById('section_taxpromax'),
                 firs: document.getElementById('section_firs'),
                 search: document.getElementById('section_search'),
-                trustee_dec: document.getElementById('section_trustee_dec')
+                trustee_dec: document.getElementById('section_trustee_dec'),
+                ngo_news: document.getElementById('section_ngo_news'),
+                indiv_news: document.getElementById('section_indiv_news'),
+                nin_slip: document.getElementById('section_nin_slip')
             };
 
             if (track === 'none') {
@@ -1343,6 +1399,42 @@
                 }
 
                 payloadText = `TRUSTEE DECLARATION FORM:\n✅ Name of Organisation : ${org}\n✅ Full name of Trustee :\n${names}\n✅ RESIDENTIAL Address: ${addr}\n✔ Signature Attached\n✔ Passport Attached`;
+            }
+
+            // Form 11 Extraction
+            else if (track === 'ngo_news') {
+                const trustees = document.getElementById('ng_trustees').value.trim();
+                const aims = document.getElementById('ng_aims').value.trim();
+
+                if (!trustees || !aims) {
+                    alert("Please provide Trustees and Aims & Objectives."); return;
+                }
+                payloadText = `NGO NEWSPAPER PUBLICATION\n\nTRUSTEES:\n${trustees}\n\nAIMS AND OBJECTIVES:\n${aims}`;
+            }
+
+            // Form 12 Extraction
+            else if (track === 'indiv_news') {
+                const former = document.getElementById('in_former').value.trim();
+                const newName = document.getElementById('in_new').value.trim();
+
+                if (!former || !newName) {
+                    alert("Please provide both former and new names."); return;
+                }
+                payloadText = `Individual Newspaper Publication\nFormer Name: ${former}\nNew Name: ${newName}`;
+            }
+
+            // Form 13 Extraction
+            else if (track === 'nin_slip') {
+                const first = document.getElementById('ni_first').value.trim();
+                const middle = document.getElementById('ni_middle').value.trim();
+                const last = document.getElementById('ni_last').value.trim();
+                const nin = document.getElementById('ni_number').value.trim();
+                const dob = document.getElementById('ni_dob').value.trim();
+
+                if (!first || !last || !nin) {
+                    alert("Please provide First Name, Last Name, and NIN."); return;
+                }
+                payloadText = `NIN SLIP REPRINT\nFirst Name: ${first}\nMiddle Name: ${middle || 'N/A'}\nLast Name: ${last}\nNIN: ${nin}\nDate of Birth: ${dob || 'N/A'}`;
             }
 
             const url = "https://wa.me/2348026281150?text=" + encodeURIComponent(payloadText);
